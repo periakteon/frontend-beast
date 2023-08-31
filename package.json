@@ -16,6 +16,7 @@
     "@heroicons/react": "^2.0.18",
     "@vercel/og": "^0.1.0",
     "next": "^13.1.6",
+    "next-themes": "^0.2.1",
     "nextra": "2.2.15",
     "nextra-theme-docs": "2.2.15",
     "react": "^18.2.0",

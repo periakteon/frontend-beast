@@ -8,13 +8,13 @@ image: "https://docs.dahliaos.io/api/og?title=dahliaOS Docs&desc=dahliaOS is a m
 import { Callout, Card, Cards } from "nextra-theme-docs";
 import { Sandpack } from "@codesandbox/sandpack-react";
 import { atomDark } from "@codesandbox/sandpack-themes";
-import { useTheme } from "nextra-theme-docs";
+import useDarkTheme from "../hooks/useDarkTheme";
 
 # Welcome to the dahliaOS documentation
 
 <Sandpack
   template="static"
-  theme={atomDark}
+  theme={useDarkTheme() ? atomDark : undefined}
   options={{
     externalResources: ["https://cdn.tailwindcss.com"],
 }}
