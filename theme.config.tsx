@@ -23,9 +23,9 @@ const useDark = () => {
 
 const config = {
   primaryHue: 200, //550,
-  project: {
-    link: "https://github.com/periakteon",
-  },
+  // project: {
+  //   link: "https://github.com/periakteon",
+  // },
   chat: {
     link: "https://twitter.com/periakteon",
     icon: (
