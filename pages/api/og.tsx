@@ -42,7 +42,7 @@ export default function handler(req: NextRequest) {
             <img
               alt="The Front-End Beast Logotype"
               width={300}
-              src="https://raw.githubusercontent.com/dahliaOS/brand/62d9cf35262982255fd85545e0185b9e39642fb1/dahliaOS/logotype/svg/logotype-light.svg"
+              src="/images/favicon/android-chrome-512x512.png"
             />
             <p
               style={{

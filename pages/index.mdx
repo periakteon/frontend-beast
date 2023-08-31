@@ -1,8 +1,8 @@
 ---
-title: dahliaOS Docs
-description: "dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS. We are developing a privacy-respecting, fast, secure and lightweight operating system, our goal is to offer our users an incredible experience to help with their daily tasks."
+title: The Front-End Beast
+description: "Welcome to The Front-End Beast – your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks, optimize front-end performance, and discover the power of Next.js development. Whether you're a beginner or aiming for full-stack expertise, our Front-End Beast has everything you need for becoming a web development pro."
 date: 2022-07-20
-image: "https://docs.dahliaos.io/api/og?title=dahliaOS Docs&desc=dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS. We are developing a privacy-respecting, fast, secure and lightweight operating system, our goal is to offer our users an incredible experience to help with their daily tasks."
+image: "http://localhost:3000/api/og?title=The Front-End Beast&desc=The Front-End Beast – your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks, optimize front-end performance, and discover the power of Next.js development. Whether you're a beginner or aiming for full-stack expertise, our Front-End Beast has everything you need for becoming a web development pro."
 ---
 
 import { Callout, Card, Cards } from "nextra-theme-docs";
@@ -10,15 +10,14 @@ import { Sandpack } from "@codesandbox/sandpack-react";
 import { atomDark } from "@codesandbox/sandpack-themes";
 import useDarkTheme from "../hooks/useDarkTheme";
 
-# Welcome to the dahliaOS documentation
+# Welcome to the Front-End Beast
+
+## Playground
 
 <Sandpack
   template="static"
   theme={useDarkTheme() ? atomDark : undefined}
-  options={{
-    externalResources: ["https://cdn.tailwindcss.com"],
-}}
-files={{
+  files={{
 "/index.html": `<!DOCTYPE html>
 
 <html>
@@ -38,12 +37,10 @@ files={{
 />
 
 <Callout type="warning" emoji="⚠️">
-  dahliaOS is currently in the alpha phase of development meaning most
-  applications it ships with are unfinished, some features are missing and it is
-  not stable nor daily drivable.
+  The Front-End Beast is currently in the alpha phase of development.
 </Callout>
 
-```go filename="pages/_meta.json" {5-18}
+```go filename="main.go" {5-18}
 package main
 
 import "fmt"
@@ -53,17 +50,9 @@ func main() {
 }
 ```
 
-dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS.
-We are developing a privacy-respecting, fast, secure and lightweight operating system, our goal is to offer our users an incredible experience to help with their daily tasks.
+Under construction.
 
 <Cards>
-  <Card icon={""} title="Live boot" href="/live-boot" />
-  <Card icon={""} title="Build" href="/build" />
-  <Card icon={""} title="OS" href="/os" />
-  <Card icon={""} title="Pangolin" href="/pangolin" />
-  <Card icon={""} title="Troubleshoot" href="/troubleshoot" />
-  <Card icon={""} title="Hardware" href="/hardware" />
-  <Card icon={""} title="Developers" href="/developers" />
-  <Card icon={""} title="Contribute" href="/contribute" />
-  <Card icon={""} title="F.A.Q" href="/faq" />
+  <Card icon={""} title="HTML" href="/html" />
+  <Card icon={""} title="CSS" href="/css" />
 </Cards>

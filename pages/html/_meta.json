@@ -1,5 +1,3 @@
 {
-  "qemu": "QEMU",
-  "virtualbox": "VirtualBox",
-  "x86_64": "x86_64"
+  "introduction": "1. What is HTML?"
 }

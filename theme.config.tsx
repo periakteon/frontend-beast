@@ -37,7 +37,7 @@ const config = {
       </svg>
     ),
   },
-  docsRepositoryBase: "https://za.com/dahliaOS/documentation/blob/main/",
+  // docsRepositoryBase: "https://za.com/dahliaOS/documentation/blob/main/",
   toc: {
     extraContent: () => {
       return (
@@ -143,7 +143,7 @@ const config = {
           href="/images/favicon/favicon-32x32.png"
         />
         <meta name="apple-mobile-web-app-status-bar-style" content="#ff3d00" />
-        <meta name="apple-mobile-web-app-title" content="dahliaOS" />
+        <meta name="apple-mobile-web-app-title" content="The Front-End Beast" />
         <meta
           name="msapplication-TileImage"
           content="/images/favicon/favicon.png"
@@ -170,27 +170,27 @@ const config = {
         <link rel="manifest" href="/site.webmanifest" />
         <meta
           name="keywords"
-          content="dahlia, documentation, software, flutter, fuchsia, linux, dahliaOS, computer, operating system, os, system, kernel, dart, open source, material, design, zircon, go, rust"
+          content="HTML basics, CSS styling, JavaScript fundamentals, Front-End Beast, The Front-End Beast, Front-end web development, Web development tutorials, Front-end coding, Full Stack learning, Responsive web design, Web development courses, HTML5 features, CSS3 techniques, Interactive web projects, JavaScript frameworks, Front-end optimization, UI/UX design, Progressive web apps, Next.js development, Browser compatibility, Web coding best practices, JavaScript libraries, SEO-friendly websites, Front-end performance, Node.js, Web app development, Tailwind CSS tips"
         />
         <meta
           property="description"
           content={
             meta.description ||
-            "dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS. We are developing a privacy-respecting, fast, secure and lightweight operating system, our goal is to establish a new standard for the desktop platform."
+            "Welcome to The Front-End Beast – your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks, optimize front-end performance, and discover the power of Next.js development. Whether you're a beginner or aiming for full-stack expertise, our Front-End Beast has everything you need for becoming a web development pro."
           }
         />
         <meta
           property="og:description"
           content={
             meta.description ||
-            "dahliaOS is a modern, secure, lightweight and responsive operating system, combining the best of GNU/Linux and Fuchsia OS. We are developing a privacy-respecting, fast, secure and lightweight operating system, our goal is to establish a new standard for the desktop platform."
+            "Welcome to The Front-End Beast – your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks, optimize front-end performance, and discover the power of Next.js development. Whether you're a beginner or aiming for full-stack expertise, our Front-End Beast has everything you need for becoming a web development pro."
           }
         />
         <meta
           property="og:image"
           content={
             meta.image ||
-            urlcat("https://docs.dahliaos.io/api/og/", {
+            urlcat("http://frontendbeast.com/api/og/", {
               title,
               desc: meta.description ?? undefined,
             })
@@ -200,22 +200,25 @@ const config = {
           property="twitter:card"
           content={meta.image ? "summary_large_image" : "summary"}
         />
-        <meta property="twitter:site" content="@dahliaos_io" />
+        <meta property="twitter:site" content="@thefrontendbeast" />
         {route === "/" ? (
-          <meta property="twitter:title" content="dahliaOS Docs" />
+          <meta property="twitter:title" content="The Front-End Beast" />
         ) : (
-          <meta property="twitter:title" content={`${title} - dahliaOS Docs`} />
+          <meta
+            property="twitter:title"
+            content={`${title} - The Front-End Beast`}
+          />
         )}
         <meta property="twitter:description" content={meta.description} />
         <meta
           property="twitter:url"
-          content={`https://docs.dahliaos.io${asPath}`}
+          content={`http://frontendbeast.com${asPath}`}
         />
         <meta
           property="twitter:image"
           content={
             meta.image ||
-            urlcat("https://docs.dahliaos.io/api/og/", {
+            urlcat("http://frontendbeast.com/api/og/", {
               title,
               desc: meta.description ?? undefined,
             })
