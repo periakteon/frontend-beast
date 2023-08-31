@@ -1,24 +1,18 @@
 {
   "index": "Introduction",
-  "live-boot": "Live boot",
-  "build": "Build",
-  "os": "OS",
-  "pangolin": "Pangolin",
-  "troubleshoot": "Troubleshoot",
-  "hardware": "Hardware",
-  "developers": "Developers",
-  "contribute": "Contribute",
+  "html": "🌐 HTML",
+  "css": "💅🏽 CSS",
   "faq": "F.A.Q.",
   "website": {
-    "title": "Website ↗",
+    "title": "Home ↗",
     "type": "page",
-    "href": "https://dahliaos.io",
-    "newWindow": true
+    "href": "https://frontendbeast.com",
+    "newWindow": false
   },
-  "pangolin-demo": {
-    "title": "Pangolin Demo ↗",
+  "twitter": {
+    "title": "Twitter ↗",
     "type": "page",
-    "href": "https://web.dahliaos.io",
+    "href": "https://twitter.com/thefrontendbeast",
     "newWindow": true
   }
 }
