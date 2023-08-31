@@ -131,7 +131,7 @@ const config = {
           property="og:url"
           content={`https://frontendbeast.com${asPath}`}
         />
-        <meta name="theme-color" content="#ff3d00" />
+        <meta name="theme-color" content="#3399ff" />
         <meta property="og:site_name" content="The Front-End Beast" />
         <meta name="og:title" content="The Front-End Beast" />
         <meta httpEquiv="Content-Language" content="en" />
@@ -142,13 +142,13 @@ const config = {
           type="image/png"
           href="/images/favicon/favicon-32x32.png"
         />
-        <meta name="apple-mobile-web-app-status-bar-style" content="#ff3d00" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#3399ff" />
         <meta name="apple-mobile-web-app-title" content="The Front-End Beast" />
         <meta
           name="msapplication-TileImage"
           content="/images/favicon/favicon.png"
         />
-        <meta name="msapplication-TileColor" content="#ff3d00" />
+        <meta name="msapplication-TileColor" content="#3399ff" />
 
         <link
           rel="apple-touch-icon"
@@ -212,7 +212,7 @@ const config = {
         <meta property="twitter:description" content={meta.description} />
         <meta
           property="twitter:url"
-          content={`http://frontendbeast.com${asPath}`}
+          content={`https://frontendbeast.com${asPath}`}
         />
         <meta
           property="twitter:image"
