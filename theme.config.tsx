@@ -69,6 +69,7 @@ const config = {
   editLink: {
     text: "✍️ Edit this page on GitHub →",
   },
+  gitTimestamp: true,
   logo: () => {
     const isDark = useDark();
     return (
@@ -92,6 +93,14 @@ const config = {
     }
     return { titleTemplate: "The Front-End Beast" };
   },
+  // banner: {
+  //   key: "2.0-release",
+  //   text: (
+  //     <a href="https://nextra.site" target="_blank" rel="noreferrer">
+  //       🎉 Nextra 2.0 is released. Read more →
+  //     </a>
+  //   ),
+  // },
   head: () => {
     const { asPath } = useRouter();
     const { route } = useRouter();
