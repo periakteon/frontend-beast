@@ -1,0 +1,16 @@
+# artifacts
+build
+coverage
+
+# next.js
+.next
+
+# dependencies
+node_modules
+pnpm-lock.yaml
+
+# assets
+public
+
+# prettier does not support mdx 2 so it breaks the code
+qemu.mdx

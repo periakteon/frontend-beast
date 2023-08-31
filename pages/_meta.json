@@ -1,0 +1,24 @@
+{
+  "index": "Introduction",
+  "live-boot": "Live boot",
+  "build": "Build",
+  "os": "OS",
+  "pangolin": "Pangolin",
+  "troubleshoot": "Troubleshoot",
+  "hardware": "Hardware",
+  "developers": "Developers",
+  "contribute": "Contribute",
+  "faq": "F.A.Q.",
+  "website": {
+    "title": "Website ↗",
+    "type": "page",
+    "href": "https://dahliaos.io",
+    "newWindow": true
+  },
+  "pangolin-demo": {
+    "title": "Pangolin Demo ↗",
+    "type": "page",
+    "href": "https://web.dahliaos.io",
+    "newWindow": true
+  }
+}
