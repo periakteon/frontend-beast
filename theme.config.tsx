@@ -190,7 +190,7 @@ const config = {
           property="og:image"
           content={
             meta.image ||
-            urlcat("http://frontendbeast.com/api/og/", {
+            urlcat("https://frontendbeast.com/api/og/", {
               title,
               desc: meta.description ?? undefined,
             })
@@ -218,7 +218,7 @@ const config = {
           property="twitter:image"
           content={
             meta.image ||
-            urlcat("http://frontendbeast.com/api/og/", {
+            urlcat("https://frontendbeast.com/api/og/", {
               title,
               desc: meta.description ?? undefined,
             })
