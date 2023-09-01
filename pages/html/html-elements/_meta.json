@@ -2,5 +2,6 @@
   "html": "<html>",
   "head": "<head",
   "a": "<a>",
-  "article": "<article>"
+  "article": "<article>",
+  "aside": "<aside>"
 }

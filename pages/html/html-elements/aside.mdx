@@ -1,0 +1,141 @@
+---
+title: <aside> Element - Introduction to HTML
+description: Learn about the HTML <aside> element, which is used to define content that is tangentially related to the content around it.
+date: 2023-09-01
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<aside> - Introduction to HTML"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<aside>`
+
+The `<aside>` element is used to define content that is tangentially related to the content around it. It's typically used for content like sidebars, pull quotes, advertising, or any content that is related but not the primary focus of the page.
+
+## Syntax
+
+Here's the basic syntax of the `<aside>` element:
+
+```html
+<aside>
+  <!-- Your aside content goes here -->
+</aside>
+```
+
+Now, let's dive into some examples to illustrate its usage:
+
+## Real World Scenario Example
+
+Let's say you're writing a blog post about a new JavaScript library you've been working on. You want to include a sidebar with a link to the GitHub repository for the library, as well as a link to the documentation. You also want to include a link to your personal website, where you have a blog post about the library.
+
+Here's how you could use the `<aside>` element to accomplish this:
+
+```html
+<article>
+  <h1>My New JavaScript Library</h1>
+  <p>(content of blog post)</p>
+  <aside>
+    <h2>Links</h2>
+    <ul>
+      <li><a href="">GitHub Repository</a></li>
+      <li><a href="">Documentation</a></li>
+      <li><a href="">Blog Post</a></li>
+    </ul>
+  </aside>
+</article>
+```
+
+In this example, the `<aside>` element contains related links that are not the main focus of the article but provide additional context or resources.
+
+You can style the `<aside>` element using [**CSS**](/css), and it can also have attributes like `class` or `id` for further styling or JavaScript interactions.
+
+Here are some examples of how you could style the `<aside>` element:
+
+```css
+aside {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+```
+
+<Callout type="info" emoji="ℹ️">
+    Remember, the use of the `<aside>` element should be **semantically meaningful**. It's _essential_ to use it for content that is related to the main content _but_ not a part of it.
+</Callout>
+
+## Playground
+
+Here's a live example of the `<aside>` element in action:
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aside Element Example</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        aside {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Website Header</h1>
+    </header>
+    
+    <aside>
+        <h2>Aside Section</h2>
+        <p>This is some content inside the aside element.</p>
+    </aside>
+
+    <main>
+        <h2>Main Content</h2>
+        <p>Main content goes here...</p>
+    </main>
+
+    <footer>
+        <p>© 2023 Your Website</p>
+    </footer>
+
+</body>
+</html>`,
+  }}
+/>
