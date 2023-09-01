@@ -23,11 +23,11 @@ const useDark = () => {
 
 const config = {
   primaryHue: 200, //550,
-  // project: {
-  //   link: "https://github.com/periakteon",
-  // },
+  project: {
+    link: "https://github.com/periakteon",
+  },
   chat: {
-    link: "https://twitter.com/periakteon",
+    link: "https://twitter.com/thefrontendbeast",
     icon: (
       <svg width="24" height="24" viewBox="0 0 248 204">
         <path
@@ -96,7 +96,7 @@ const config = {
           alt="The Front-End Beast"
           style={{ marginRight: "10px", marginBottom: "3px" }}
         />
-        <span style={{ fontWeight: "600" }}>Documentation</span>
+        <span style={{ fontWeight: "600" }}>Docs</span>
       </>
     );
   },
