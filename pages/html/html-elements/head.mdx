@@ -215,6 +215,15 @@ In HTML, the `<script>` element is used to embed or reference JavaScript code wi
 
 In this tutorial, you have learned about the `<head>` element and its sub-elements. The `<head>` element is used to define the head section of an HTML document. It contains metadata about the document, such as its title, description, and keywords. The `<head>` element is a crucial part of a web page's structure. It contains meta-information and resources that help browsers render and display the page correctly.
 
+### Console
+
+To open the console in web browsers, you can use the following keyboard shortcuts:
+
+- **Google Chrome**: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd> (Windows / Linux) or <kbd>Cmd</kbd> + <kbd>Opt</kbd> + <kbd>J</kbd> (Mac)
+- **Firefox**: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> (Windows / Linux) or <kbd>Cmd</kbd> + <kbd>Opt</kbd> + <kbd>K</kbd> (Mac)
+- **Microsoft Edge**: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd> (Windows / Linux) or <kbd>Cmd</kbd> + <kbd>Opt</kbd> + <kbd>J</kbd> (Mac)
+- **Safari**: <kbd>Cmd</kbd> + <kbd>Opt</kbd> + <kbd>C</kbd> (Mac)
+
 ### Playground
 
 <Sandpack
@@ -232,16 +241,26 @@ In this tutorial, you have learned about the `<head>` element and its sub-elemen
     <meta name="author" content="John Doe" />
     <title>My Website Title</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script>
+      console.log("Hello World!");
+    </script>
     <style>
       body {
         background-color: #f0f0f0;
       }
+      h1 {
+        color: #ff0000;
+      }
+      h6 {
+        color: green;
+      }
     </style>
   </head>
   <body>
+    <h1>HTML Element: <code>&lt;head&gt;</code></h1>
     <!-- Using base url, all relative urls will be prefixed with https://frontendbeast.com/ -->
     <a href="about.html">About Page</a>
+    <h6>Open the console to see the output of the script</h6>
   </body>
 </html>`,
   }}
