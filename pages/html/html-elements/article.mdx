@@ -1,0 +1,210 @@
+---
+title: <article> Element - Introduction to HTML
+description: Learn about the HTML <article> element, which is used to create self-contained pieces of content that can be distributed and reused independently.
+date: 2023-09-01
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<article> - Introduction to HTML"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<article>`
+
+The `<article>` element in HTML is used to define a self-contained piece of content that can be distributed and reused independently. It represents a complete, or self-contained, composition in a document, such as a news article, blog post, forum post, or a comment. It is a **semantic element** that helps search engines and assistive technologies understand the structure of your content.
+
+<Callout emoji="💡" type="info">
+    The HTML `<article>` element is a fundamental building block for structuring web content. It plays a crucial role in creating **semantically meaningful documents** that are not only accessible but also beneficial for **Search Engine Optimization** (_SEO_). In this comprehensive guide, we will delve into the technical nuances of the `<article>` element, its purpose, usage, and best practices.
+</Callout>
+
+## Syntax
+
+Here's the basic syntax of the `<article>` element:
+
+```html
+<article>
+  <!-- Content goes here -->
+</article>
+```
+
+Now, let's dive into some examples to illustrate its usage:
+
+## Example 1: News Article
+
+```html
+<article>
+  <h1>Breaking News: New Discovery on Mars</h1>
+  <p>
+    Scientists have found evidence of water on the surface of Mars, indicating
+    the possibility of life.
+  </p>
+  <p>Published on: <time datetime="2023-09-01">September 1, 2023</time></p>
+</article>
+```
+
+## Example 2: Blog Post
+
+```html
+<article>
+  <h1>Top 10 Web Development Frameworks</h1>
+  <p>
+    If you're a web developer, you need to know about these popular
+    frameworks...
+  </p>
+  <p>Written by: John Doe</p>
+  <p>Published on: <time datetime="2023-08-15">August 15, 2023</time></p>
+</article>
+```
+
+## Example 3: Forum Post
+
+```html
+<article>
+  <h2>Discussion: JavaScript vs. TypeScript</h2>
+  <p>
+    What are the pros and cons of using TypeScript in a JavaScript project?
+    Let's discuss...
+  </p>
+  <p>Posted by: JaneSmith123</p>
+  <p>Posted on: <time datetime="2023-07-20">July 20, 2023</time></p>
+</article>
+```
+
+## Example 4: Comment
+
+```html
+<article>
+  <p>Great article! I learned a lot from it.</p>
+  <p>Posted by: John Doe</p>
+  <p>Posted on: <time datetime="2023-06-10">June 10, 2023</time></p>
+</article>
+```
+
+## Example 5: Product Review
+
+```html
+<article>
+  <h1>Product Review: iPhone 20</h1>
+  <p>Here's my review of the new iPhone 20...</p>
+  <p>Written by: John Doe</p>
+  <p>Published on: <time datetime="2023-05-05">May 5, 2023</time></p>
+</article>
+```
+
+## Example 6: Recipe
+
+```html
+<article>
+  <h1>Recipe: Chocolate Chip Cookies</h1>
+  <p>Here's how to make delicious chocolate chip cookies...</p>
+  <p>Written by: Jane Smith</p>
+  <p>Published on: <time datetime="2023-04-01">April 1, 2023</time></p>
+</article>
+```
+
+## Example 7: Book Review
+
+```html
+<article>
+  <h1>Book Review: The Alchemist</h1>
+  <p>Here's my review of the book "The Alchemist" by Paulo Coelho...</p>
+  <p>Written by: John Doe</p>
+  <p>Published on: <time datetime="2023-03-01">March 1, 2023</time></p>
+</article>
+```
+
+## Example 8: Video Game Review
+
+```html
+<article>
+  <h1>Video Game Review: Cyberpunk 2077</h1>
+  <p>Here's my review of the video game "Cyberpunk 2077"...</p>
+  <p>Written by: Jane Smith</p>
+  <p>Published on: <time datetime="2023-02-01">February 1, 2023</time></p>
+</article>
+```
+
+## Example 9: Movie Review
+
+```html
+<article>
+  <h1>Movie Review: The Matrix</h1>
+  <p>Here's my review of the movie "The Matrix"...</p>
+  <p>Written by: John Doe</p>
+  <p>Published on: <time datetime="2023-01-01">January 1, 2023</time></p>
+</article>
+```
+
+## Best Practices
+
+Here are some best practices to keep in mind when using the `<article>` element:
+
+### `<article>` for Self-Contained Content Only
+
+Reserve the `<article>` element for content that can be extracted from the page and still make sense. Avoid using it for non-essential elements like navigation menus or footers.
+
+### Employ Semantic HTML
+
+Use semantic HTML elements like `<h1>`, `<p>`, `<time>`, `<figure>`, and `<figcaption>` to structure the content inside the `<article>` element. Use appropriate headings, paragraphs, and other elements to structure your content logically.
+
+### Optimize for Accessibility
+
+Make your content accessible to all users, including those with disabilities, by providing meaningful `alt` text for images and ensuring proper keyboard navigation.
+
+### Use `<time>` for Dates
+
+Use the `<time>` element to represent dates and times. This helps search engines and assistive technologies understand the structure of your content.
+
+### Implement SEO Best Practices
+
+Use the `<title>` element to specify the title of the article. Use the `<meta name="description">` element to specify a short description of the article. Use the `<meta name="keywords">` element to specify a list of keywords related to the article. In short, use descriptive headings, meta tags, and schema.org markup to enhance your content's visibility in search engine results.
+
+### Conclusion
+
+The `<article>` element is a semantic element that helps search engines and assistive technologies understand the structure of your content. It is used to define a self-contained piece of content that can be distributed and reused independently. It represents a complete, or self-contained, composition in a document, such as a news article, blog post, forum post, or a comment. The HTML `<article>` element is a powerful tool for structuring web content, improving accessibility, and boosting SEO. By following best practices and understanding its purpose, you can create professional, technically sound web documents that deliver a superior user experience.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Article Example</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Investing in High Technology</h1>
+            <p>Why should you invest in new technology trends?</p>
+        </header>
+        <section>
+            <h2>The Importance of Technology Spending</h2>
+            <p>Investing in technology is crucial to stay competitive in the business world of the future. It enhances productivity and creates new opportunities.</p>
+        </section>
+        <section>
+            <h2>Investment Strategies</h2>
+            <ul>
+                <li>
+                    <h3>Investing in Innovative Start-Ups</h3>
+                    <p>Investing in innovative startups can lead to significant profits in the future.</p>
+                </li>
+                <li>
+                    <h3>R&D Projects</h3>
+                    <p>Investing in research and development projects can boost your company's competitive advantage.</p>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <p>Before investing, don't forget to seek expert advice and carefully evaluate the risks.</p>
+        </footer>
+    </article>
+</body>
+</html>`,
+  }}
+/>

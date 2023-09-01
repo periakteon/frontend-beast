@@ -1,5 +1,6 @@
 {
   "html": "<html>",
   "head": "<head",
-  "a": "<a>"
+  "a": "<a>",
+  "article": "<article>"
 }
