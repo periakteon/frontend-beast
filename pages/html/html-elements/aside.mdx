@@ -24,7 +24,99 @@ Here's the basic syntax of the `<aside>` element:
 </aside>
 ```
 
-Now, let's dive into some examples to illustrate its usage:
+## Attributes
+
+The `<aside>` element can have the following attributes:
+
+### `class`
+
+The `class` attribute is used to add a class to the `<aside>` element, which you can use to style it with [**CSS**](/css).
+
+```html
+<aside class="sidebar">
+  <!-- Your aside content goes here -->
+</aside>
+```
+
+### `id`
+
+The `id` attribute is used to add an ID to the `<aside>` element, which you can use to style it with [**CSS**](/css) or target it with [**JavaScript**](/javascript).
+
+```html
+<aside id="sidebar">
+  <!-- Your aside content goes here -->
+</aside>
+```
+
+### `style`
+
+The `style` attribute is used to add inline [**CSS**](/css) styles to the `<aside>` element.
+
+```html
+<aside
+  style="background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc; margin: 10px;"
+>
+  <!-- Your aside content goes here -->
+</aside>
+```
+
+### `title`
+
+The `title` attribute is used to add a title to the `<aside>` element, which is displayed as a tooltip when the user hovers over the element.
+
+```html
+<aside title="This is the title of the aside element">
+  <!-- Your aside content goes here -->
+</aside>
+```
+
+### `lang`
+
+The `lang` attribute is used to specify the language of the content inside the `<aside>` element.
+
+```html
+<aside lang="en">
+  <!-- Your aside content goes here -->
+</aside>
+```
+
+### `dir`
+
+The `dir` attribute defines the text direction (**left-to-right** (`ltr`) or **right-to-left** (`rtl`) ) for the content within the element.
+
+```html
+<aside dir="rtl">
+  <!-- Your aside content goes here -->
+</aside>
+```
+
+### `tabindex`
+
+The `tabindex` attribute specifies the tab order of the element. It's typically used to make elements focusable.
+
+```html
+<aside tabindex="0">
+  <!-- Your aside content goes here -->
+</aside>
+```
+
+### Example
+
+The below example shows how you can use the `<aside>` element with these attributes:
+
+```html
+<aside
+  class="sidebar"
+  id="important-info"
+  style="background-color: #f0f0f0;"
+  title="Additional Information"
+  lang="en"
+  dir="ltr"
+  tabindex="1"
+>
+  Aside with attributes!
+</aside>
+```
 
 ## Real World Scenario Example
 

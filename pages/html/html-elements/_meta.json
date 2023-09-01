@@ -3,5 +3,6 @@
   "head": "<head>",
   "a": "<a>",
   "article": "<article>",
-  "aside": "<aside>"
+  "aside": "<aside>",
+  "audio": "<audio>"
 }

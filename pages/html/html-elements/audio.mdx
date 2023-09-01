@@ -1,0 +1,177 @@
+---
+title: <audio> Element - Introduction to HTML
+description: Learn about the HTML <audio> element, which is used to embed audio content in a document.
+date: 2023-09-01
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<audio> - Introduction to HTML"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<audio>`
+
+The `<audio>` element in HTML is used to embed audio content, such as music, sound effects, or spoken text, into a web page. It provides a way to play audio files directly within the web page, and it supports various audio formats like MP3, Ogg Vorbis, and WAV. Let's explore this in more detail with examples and best practices.
+
+## Syntax
+
+Here's the basic syntax of the `<audio>` element:
+
+```html
+<audio src="audio.mp3" controls></audio>
+```
+
+Inside the `<audio>` element, you provide one or more `<source>` elements, each with a different audio format. The browser will select the first compatible format.
+
+```html {2-4}
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg" />
+  <source src="audio.ogg" type="audio/ogg" />
+  <source src="audio.wav" type="audio/wav" />
+</audio>
+```
+
+The `controls` attribute adds audio playback controls (play, pause, volume, etc.).
+
+## Attributes
+
+The `<audio>` element supports the following attributes:
+
+### `autoplay`
+
+Specifies that the audio will start playing as soon as it is ready.
+
+```html
+<audio autoplay>
+  <!-- sources here -->
+</audio>
+```
+
+### `controls`
+
+Specifies that the audio will display controls (like play, pause, volume, etc.).
+
+```html
+<audio controls>
+  <!-- sources here -->
+</audio>
+```
+
+### `loop`
+
+Specifies that the audio will start over again, every time it is finished.
+
+```html
+<audio loop>
+  <!-- sources here -->
+</audio>
+```
+
+### `muted`
+
+Specifies that the audio output should be muted.
+
+```html
+<audio muted>
+  <!-- sources here -->
+</audio>
+```
+
+### `preload`
+
+Specifies if and how the audio should be loaded when the page loads. Possible values are `none`, `metadata`, and `auto`.
+
+```html
+<audio preload="auto">
+  <!-- sources here -->
+</audio>
+```
+
+### `src`
+
+Specifies the URL of the audio file.
+
+```html
+<audio src="audio.mp3">
+  <!-- sources here -->
+</audio>
+```
+
+### `type`
+
+Specifies the media type of the audio file. The value must be a valid [**MIME type**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types).
+
+```html
+<audio type="audio/mpeg">
+  <!-- sources here -->
+</audio>
+```
+
+## Example
+
+Here's an example of the `<audio>` element in action:
+
+```html
+<audio controls>
+  <source src="music.mp3" type="audio/mpeg" />
+  <source src="music.ogg" type="audio/ogg" />
+  Your browser does not support the audio element.
+</audio>
+```
+
+In this example, we provide both MP3 and Ogg Vorbis formats **to ensure compatibility with different browsers**.
+
+<Callout emoji="💡" type="info">
+  The text "**Your browser does not support the audio element**." is displayed if the browser does not support the `<audio>` element.
+</Callout>
+
+## Best Practices
+
+Here are some best practices to keep in mind when using the `<audio>` element:
+
+### Provide Multiple Formats
+
+Include multiple `<source>` elements with different formats to ensure cross-browser compatibility.
+
+### Accessibility
+
+Use text within the `<audio>` element to provide a fallback message for browsers that don't support it.
+
+### Preload Attribute
+
+You can use the `preload` attribute to hint to the browser whether to preload the audio data.
+
+```html
+<audio controls preload="auto">
+  <!-- sources here -->
+</audio>
+```
+
+## Advanced Features
+
+The `<audio>` element also supports the following advanced features:
+
+### Media Fragments
+
+You can use the `#t` parameter to specify a media fragment, which allows you to specify a start and end time for the audio.
+
+```html
+<audio controls>
+  <source src="music.mp3#t=10,20" type="audio/mpeg" />
+  <source src="music.ogg#t=10,20" type="audio/ogg" />
+  Your browser does not support the audio element.
+</audio>
+```
+
+### Audio Recording
+
+You can use the `capture` attribute to record audio from the user's microphone.
+
+```html
+<audio controls capture>
+  <!-- sources here -->
+</audio>
+```
+
+Remember to test your audio elements on various browsers and devices to ensure a seamless user experience. This approach will help you integrate audio content effectively into your web projects as a Full Stack Developer.
