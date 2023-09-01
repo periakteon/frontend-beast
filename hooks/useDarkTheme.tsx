@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 const useDark = () => {
   const { resolvedTheme } = useTheme();
   const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setIsDark(resolvedTheme === "dark");
@@ -11,6 +16,8 @@ const useDark = () => {
       false;
     };
   }, [resolvedTheme]);
+
+  if (!mounted) return null;
 
   return isDark;
 };

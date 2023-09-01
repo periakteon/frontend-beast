@@ -1,0 +1,302 @@
+---
+title: Introduction to HTML - Basic Structure of HTML
+description: Introduction to HTML - Basic Structure of HTML
+date: 2023-09-01
+image: "https://frontendbeast.com/api/og?title=Basic Structure of HTML&desc=Introduction to HTML - Basic Structure of HTML."
+---
+
+import { Tabs, Tab, Callout, Steps } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../hooks/useDarkTheme";
+
+# HTML: Hypertext Markup Language
+
+**HTML** (_Hypertext Markup Language_) is the backbone of web development. It's a markup language used to structure content on the World Wide Web. **HTML** uses a system of tags and elements to define the structure, content, and layout of a web page.
+
+## Basic Structure of an HTML Document
+
+Every HTML document follows a basic structure:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Page Title</title>
+  </head>
+  <body>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph of text.</p>
+  </body>
+</html>
+```
+
+Let's break down the different parts of this code:
+
+- `<!DOCTYPE html>`: This declaration defines the document type and version as **HTML5**, the _latest_ version of **HTML**.
+- `<html>`: The root element that **wraps all content** on the page.
+- `<head>`: Contains meta-information about the document, such as the **page title** and **links** to external resources like [**stylesheets**](/css/introduction) or **scripts**.
+- `<title>`: Sets the **title** of the web page, which appears in the browser's title bar or tab.
+- `<body>`: The **main content** of the web page, which is rendered in the browser window. Contains the _visible_ content of the web page, including **text**, **images**, and other elements.
+
+### HTML Elements and Tags
+
+HTML uses elements enclosed in tags to define content and structure. Here are some common HTML elements:
+
+#### Headings
+
+Headings are used to define the **main headings** and **subheadings** on a web page. There are six levels of headings, from `<h1>` to `<h6>`. `<h1>` is the largest heading, and `<h6>` is the smallest heading.
+
+```html filename="index.html"
+<h1>This is a Heading 1</h1>
+<h2>This is a Heading 2</h2>
+<h3>This is a Heading 3</h3>
+<h6>This is a Heading 6</h6>
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<h1>This is a Heading 1</h1>
+<h2>This is a Heading 2</h2>
+<h3>This is a Heading 3</h3>
+<h6>This is a Heading 6</h6>`,
+  }}
+/>
+
+---
+
+#### Paragraphs
+
+```html filename="index.html"
+<p>This is a paragraph of text.</p>
+<p>This is another paragraph of text.</p>
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<p>This is a paragraph of text.</p>
+<p>This is another paragraph of text.</p>`,
+  }}
+/>
+
+---
+
+#### Lists
+
+- **Unordered List**: This is a list of items that are **not** numbered and can be in _any_ order. This can be done using the `<ul>` element. Each item in the list is wrapped in an `<li>` element, meaning that each item is a **list item**.
+
+```html filename="index.html"
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+- **Ordered List**: This is a list of items that are **numbered** and _in a specific order_. This can be done using the `<ol>` element. Each item in the list is wrapped in an `<li>` element, meaning that each item is a **list item**.
+
+```html filename="index.html"
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+"/index.html": `<h1>Unordered List</h1>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<h1>Ordered List</h1>
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>`, }} />
+
+---
+
+#### Links
+
+Links are used to navigate between web pages. They can also be used to link to other resources, such as images, videos, or documents. Links are created using the `<a>` element. The `href` attribute specifies the URL of the page or resource to link to.
+
+```html filename="index.html"
+<a href="https://frontendbeast.com"> Visit 🦊 Frontend Beast </a>
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<a href="https://frontendbeast.com">
+    Visit 🦊 Frontend Beast
+</a>`,
+  }}
+/>
+
+---
+
+#### Images
+
+Images are used to display graphics on a web page. They can be used to display **logos**, **icons**, or other visual content. To add an image to a web page, use the `<img>` element. The `src` attribute specifies the **URL** of the image to display. The `alt` attribute specifies **the text to display** if the image cannot be loaded.
+
+```html filename="index.html"
+<img src="imageUrl.jpg" alt="Description of the image" />
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<img
+src="https://frontendbeast.com/images/favicon/android-chrome-512x512.png"
+alt="Frontend Beast Logo">`,
+  }}
+/>
+
+---
+
+#### Forms
+
+Forms are used to collect user input. They can be used to collect information such as **names**, **email addresses**, or **passwords**. Forms are created using the `<form>` element. The `action` attribute specifies the **URL** to send the form data to. The `method` attribute specifies the **HTTP method** to use when sending the form data.
+
+```html filename="index.html"
+<form action="https://frontendbeast.com" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" />
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" />
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" />
+  <button type="submit">Submit</button>
+</form>
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<form action="https://frontendbeast.com" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <button type="submit">Submit</button>
+</form>`,
+  }}
+/>
+
+This can be challenging to understand at first, but don't worry! We'll cover **forms** in more detail in a later lesson.
+
+### HTML Attributes
+
+HTML elements can have attributes that provide additional information. For example, the `<img>` element has the src attribute to specify the image source, and the `<a>` element has the href attribute to define the link destination. Attributes are always specified in the **start tag** of an element, and are written as **name/value** pairs, separated by an equals sign (`=`).
+
+```html filename="index.html"
+<img src="imageUrl.jpg" alt="Description of the image" />
+<a href="https://frontendbeast.com">Visit 🦊 Frontend Beast</a>
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<img
+src="https://frontendbeast.com/images/favicon/android-chrome-512x512.png"
+alt="Frontend Beast Logo">
+<a href="https://frontendbeast.com">Visit 🦊 Frontend Beast</a>`,
+  }}
+/>
+
+### HTML Comments
+
+Comments are used to add notes to your code. They are not displayed in the browser, but can be useful for other developers to understand your code. Comments are created using the `<!--` and `-->` tags.
+
+```html filename="index.html"
+<!-- This is a comment -->
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+"/index.html": `<!-- This is a comment and will not be displayed in the browser -->`,
+    }}
+/>
+
+### Semantic HTML
+
+Semantic HTML is a way of writing HTML that **describes the meaning** of the content, rather than just _how it looks_. For example, instead of using a `<div>` element to create a section of a web page, you could use a `<section>` element. This makes it easier for **search engines** to understand the content of your web page, and can also improve accessibility for users with disabilities.
+
+```html filename="index.html"
+<header>
+  <h1>Website Header</h1>
+</header>
+<main>
+  <section>
+    <h2>Section Title</h2>
+    <p>Section content goes here.</p>
+  </section>
+</main>
+<footer>
+  <p>Copyright © 2023 Your Company</p>
+</footer>
+```
+
+**Try it out:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<header>
+    <h1>Website Header</h1>
+</header>
+<main>
+    <section>
+        <h2>Section Title</h2>
+        <p>Section content goes here.</p>
+    </section>
+</main>
+<footer>
+    <p>© 2023 Your Company</p>
+</footer>`,
+  }}
+/>
+
+### Validation and Best Practices
+
+HTML is a very forgiving language, and it's possible to write code that is **technically valid**, but **not best practice**. For example, you can use the `<br>` element to create a line break, but it's better to use CSS to control the layout of your web page. You can use the `<b>` element to make text bold, but it's better to use the `<strong>` element to indicate that the text is important. You can use the `<i>` element to make text italic, but it's better to use the `<em>` element to indicate that the text is emphasized. It's crucial to write **well-structured HTML code**. You can validate your HTML using online tools like the [**W3C Markup Validation Service**](https://validator.w3.org/) to catch errors and ensure compatibility.
+
+### Conclusion
+
+In this lesson, we learned about the basic structure of an **HTML** document, and how to use **HTML** elements and attributes to define content and structure. We also learned about semantic **HTML**, and how to write well-structured **HTML** code. **HTML** is the foundation of web development. Learning its basic structure, elements, and attributes is the first step towards creating web pages. As you gain experience, you can explore more advanced features and combine **HTML** with [**CSS**](/css) and JavaScript for dynamic and visually appealing websites.
