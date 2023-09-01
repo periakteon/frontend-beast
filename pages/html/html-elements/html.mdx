@@ -1,0 +1,166 @@
+---
+title: <html> Element - Introduction to HTML
+description: Learn about the <html> element, which is the root element of an HTML document.
+date: 2023-09-01
+image: "https://frontendbeast.com/api/og?title=<html> Element&desc=<html> Element - Introduction to HTML"
+---
+
+import { Tabs, Tab, Callout, Steps } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<html>`
+
+The `<html>` element is the root element of an HTML document. It encapsulates the entire HTML content and serves as the starting point for creating web pages. Here, we'll break down the various aspects of this element.
+
+## Basic Structure
+
+At its simplest, the `<html>` element contains two child elements: `<head>` and `<body>`. These child elements house **metadata** and **the visible content** of the web page, respectively.
+
+**Example:**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Simple HTML Page</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <p>This is a basic HTML page.</p>
+  </body>
+</html>
+```
+
+In the above example, the `<head>` element contains the `<title>` element, which defines the title of the web page. The `<body>` element contains the visible content of the web page, including a heading (`<h1>`) and a paragraph (`<p>`).
+
+### Doctype Declaration
+
+The first line of the above example is the **doctype declaration**. It is used to tell the browser which version of HTML the document is written in. In this case, the doctype declaration is `<!DOCTYPE html>`, which tells the browser that the document is written in HTML5. In short, the `<!DOCTYPE html>` declaration specifies the document type and version, indicating that the page follows **HTML5** standards. **It should be the very first line of your HTML document**.
+
+### Language Attribute
+
+The `<html>` element also has a **language attribute**. This attribute is used to specify **the language of the web page**. It is used by screen readers and search engines to determine the language of the web page. The language attribute is specified as follows:
+
+```html
+<html lang="en">
+  <!-- ... -->
+</html>
+```
+
+In the above example, the language attribute is set to `en`, which indicates that the web page is written in English. The language attribute can be set to any language code, such as `en`, `tr`, `fr`, `de`, `es`, `it`, `ja`, `ko`, `zh`, etc.
+
+### Character Encoding
+
+The `<html>` element also has a **character encoding** attribute. This attribute is used to specify **the character encoding of the web page**. It is used by the browser to determine how to interpret the characters in the web page. The character encoding attribute is specified as follows:
+
+```html
+<html lang="en" charset="UTF-8">
+  <!-- ... -->
+</html>
+```
+
+In the above example, the character encoding attribute is set to `UTF-8`, which indicates that the web page is encoded using the UTF-8 character encoding. The character encoding attribute can be set to any character encoding, such as `UTF-8`, `ISO-8859-1`, `Windows-1252`, etc.
+
+### Attributes
+
+The `<html>` element can also have other attributes, such as `xmlns`, `xml:lang`, `xmlns:xhtml`, `xmlns:svg`, `xmlns:xlink`, `xmlns:math`, `xmlns:xml`, `xmlns:xmlns`, etc. These attributes are used to specify the namespaces of the web page. They are used by the browser to determine how to interpret the elements in the web page. The attributes are specified as follows:
+
+```html
+<html
+  lang="en"
+  charset="UTF-8"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:math="http://www.w3.org/1998/Math/MathML"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  xmlns:xmlns="http://www.w3.org/2000/xmlns/"
+>
+  <!-- ... -->
+</html>
+```
+
+In the above example, the `xmlns` attribute is set to `http://www.w3.org/1999/xhtml`, which indicates that the web page is written in XHTML. The `xmlns:svg` attribute is set to `http://www.w3.org/2000/svg`, which indicates that the web page contains SVG elements. The `xmlns:xlink` attribute is set to `http://www.w3.org/1999/xlink`, which indicates that the web page contains XLink elements. The `xmlns:math` attribute is set to `http://www.w3.org/1998/Math/MathML`, which indicates that the web page contains MathML elements. The `xmlns:xml` attribute is set to `http://www.w3.org/XML/1998/namespace`, which indicates that the web page contains XML elements. The `xmlns:xmlns` attribute is set to `http://www.w3.org/2000/xmlns/`, which indicates that the web page contains XMLNS elements.
+
+### Complex Structure
+
+In a more complex scenario, an HTML document can include **external resources**, **scripts**, **styles**, and more. Here's an example with additional elements:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex HTML Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Website</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>Article Title</h2>
+        <p>This is a detailed article on HTML.</p>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2023 MyWebsite.com</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+In the above example, the `<head>` element contains the `<meta>` element, which defines the character encoding and viewport of the web page. It also contains the `<title>` element, which defines the title of the web page. The `<head>` element also contains the `<link>` element, which links to an external stylesheet. The `<body>` element contains the visible content of the web page, including a header (`<header>`), a navigation bar (`<nav>`), a main content area (`<main>`), and a footer (`<footer>`). The `<header>` element contains a heading (`<h1>`) and a navigation bar (`<nav>`). The `<nav>` element contains a list (`<ul>`) of links (`<a>`) to other pages. The `<main>` element contains an article (`<article>`). The `<article>` element contains a heading (`<h2>`) and a paragraph (`<p>`). The `<footer>` element contains a paragraph (`<p>`). The `<body>` element also contains a script (`<script>`), which links to an external JavaScript file.
+
+### Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex HTML Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Website</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>Article Title</h2>
+        <p>This is a detailed article on HTML.</p>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2023 MyWebsite.com</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+`,
+  }}
+/>
