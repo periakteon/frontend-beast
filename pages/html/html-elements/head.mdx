@@ -1,0 +1,216 @@
+---
+title: <head> Element - Introduction to HTML
+description: Learn about the <head> element, which is used to define the head section of an HTML document.
+date: 2023-09-01
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<head> - Introduction to HTML"
+---
+
+import { Tabs, Tab, Callout, Steps } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<head>`
+
+The `<head>` element is used to define the head section of an HTML document. The head section contains **metadata** about the document, such as its **title**, **description**, and **keywords**. The `head` element in HTML is a crucial part of a web page's structure.
+
+<Callout type="info" emoji="ℹ️">
+    `<head>` element contains meta-information and resources that help browsers render and display the page **correctly**. So, it is important to include the `<head>` element in your HTML document.
+</Callout>
+
+## Basic Structure
+
+The `<head>` element is a container for all the head elements. It contains the following elements:
+
+- `<title>`: The title of the document.
+- `<base>`: The base URL for all relative URLs in the page.
+- `<link>`: Defines a link between a document and an external resource.
+- `<meta>`: Defines metadata about an HTML document.
+- `<style>`: Defines style information for a document. It is used to define [**CSS**](/css) rules for the document.
+- `<script>`: Defines a client-side script.
+
+**Example**:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="https://frontendbeast.com/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Website" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="John Doe" />
+    <title>My Website Title</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <style>
+      body {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Using base url, all relative urls will be prefixed with https://frontendbeast.com/ -->
+    <a href="about.html">About Page</a>
+  </body>
+</html>
+```
+
+### `<title>` Element
+
+The `<title>` element is used to define the title of the document. The title is displayed in the browser's title bar or in the page's tab. It is also used by search engines to display a page's title in search results.
+
+**Example**:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Website Title</title>
+  </head>
+  <body>
+    <!-- Content goes here -->
+  </body>
+</html>
+```
+
+### `<base>` Element
+
+The `<base>` element is used to specify the base URL for all relative URLs in the page. It is used to specify the base URL for all relative URLs in the page. The base URL is used by the browser to resolve relative URLs. The base URL is used by the browser to resolve relative URLs.
+
+**Example**:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="https://frontendbeast.com/" />
+  </head>
+  <body>
+    <!-- Using base url, all relative urls will be prefixed with https://frontendbeast.com/ -->
+    <a href="about.html">About Page</a>
+  </body>
+</html>
+```
+
+### `<link>` Element
+
+The `<link>` element is used to define a link between a document and an external resource. It is used to link to external style sheets, JavaScript files, and other resources. The `<link>` element is used to link to external style sheets, JavaScript files, and other resources.
+
+**Example**:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Content goes here -->
+  </body>
+</html>
+```
+
+### `<meta>` Element
+
+The `<meta>` element is used to define metadata about an HTML document. It is used to define metadata about an HTML document. The `<meta>` element is used to define metadata about an HTML document. More specifically, it is used to specify the character set, page description, keywords, author of the document, and other metadata.
+
+**Example**:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My Website" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="John Doe" />
+  </head>
+  <body>
+    <!-- Content goes here -->
+  </body>
+</html>
+```
+
+### `<style>` Element
+
+The `<style>` element is used to define style information for a document. It is used to define style information for a document. Using the `<style>` element, you can define [**CSS**](/css) rules for the document. In short, `<style>` element is used to define style information for a document.
+
+**Example**:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Content goes here -->
+  </body>
+</html>
+```
+
+In the above example, we have defined a [**CSS**](/css) rule for the `body` element. The rule sets the background color of the `body` element to `#f0f0f0`.
+
+### `<script>` Element
+
+In HTML, the `<script>` element is used to embed or reference JavaScript code within a web page. Here's a brief explanation of how it works.
+
+- **Embedding JavaScript**: You can place JavaScript code directly within the `<script>` element. For example:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      alert("Hello World!");
+    </script>
+  </head>
+  <body>
+    <!-- Content goes here -->
+  </body>
+</html>
+```
+
+- **Referencing External JavaScript**: You can also reference an external JavaScript file using the `src` attribute. For example:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Content goes here -->
+  </body>
+</html>
+```
+
+- **Attributes**: The `<script>` element also supports the following attributes:
+
+  - `async`: This attribute tells the browser to download the script asynchronously. It is used to improve page load performance.
+  - `defer`: This attribute tells the browser to download the script after the document has been parsed. It is used to improve page load performance.
+  - `type`: This attribute specifies the MIME type of the script. It is used to specify the MIME type of the script. The default value is `text/javascript`.
+
+**Example**:
+
+```html filename="index.html"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="script.js" async></script>
+  </head>
+  <body>
+    <!-- Content goes here -->
+  </body>
+</html>
+```
+
+### Conclusion
+
+In this tutorial, you have learned about the `<head>` element and its sub-elements. The `<head>` element is used to define the head section of an HTML document. It contains metadata about the document, such as its title, description, and keywords. The `<head>` element is a crucial part of a web page's structure. It contains meta-information and resources that help browsers render and display the page correctly.
