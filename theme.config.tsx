@@ -27,7 +27,7 @@ const config = {
     link: "https://github.com/periakteon",
   },
   chat: {
-    link: "https://twitter.com/thefrontendbeast",
+    link: "https://twitter.com/frontendbeast_",
     icon: (
       <svg width="24" height="24" viewBox="0 0 248 204">
         <path
@@ -42,7 +42,7 @@ const config = {
     extraContent: () => {
       return (
         <>
-          <Link target="_blank" href="https://twitter.com/thefrontendbeast">
+          <Link target="_blank" href="https://twitter.com/frontendbeast_">
             🐦 Follow on Twitter →
           </Link>
           {/* <Link target="_blank" href="https://dahliaos.io/donate">
@@ -200,7 +200,7 @@ const config = {
           property="twitter:card"
           content={meta.image ? "summary_large_image" : "summary"}
         />
-        <meta property="twitter:site" content="@thefrontendbeast" />
+        <meta property="twitter:site" content="@frontendbeast_" />
         {route === "/" ? (
           <meta property="twitter:title" content="The Front-End Beast" />
         ) : (
