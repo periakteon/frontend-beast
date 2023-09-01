@@ -214,3 +214,35 @@ In HTML, the `<script>` element is used to embed or reference JavaScript code wi
 ### Conclusion
 
 In this tutorial, you have learned about the `<head>` element and its sub-elements. The `<head>` element is used to define the head section of an HTML document. It contains metadata about the document, such as its title, description, and keywords. The `<head>` element is a crucial part of a web page's structure. It contains meta-information and resources that help browsers render and display the page correctly.
+
+### Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="https://frontendbeast.com/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Website" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="John Doe" />
+    <title>My Website Title</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <style>
+      body {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Using base url, all relative urls will be prefixed with https://frontendbeast.com/ -->
+    <a href="about.html">About Page</a>
+  </body>
+</html>`,
+  }}
+  />
