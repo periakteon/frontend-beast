@@ -1,0 +1,134 @@
+---
+title: <base> Element - Introduction to HTML
+description: Learn about the HTML <base> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<base> - Introduction to HTML"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<base>`
+
+The `<base>` element in HTML is used to specify a base URL for relative URLs within a document.
+
+## Syntax
+
+It has no closing tag, and its syntax is as follows:
+
+```html
+<base href="https://frontendbeast.com/" target="_blank" />
+```
+
+## Attributes
+
+### `href`
+
+The `href` attribute attribute is the URL that serves as the base for relative URLs. It is a required attribute.
+
+### `target`
+
+The `target` attribute specifies where to open the linked document. It is an optional attribute. The possible values are:
+
+#### `_blank`
+
+Opens the linked document in a new window or tab.
+
+#### `_self`
+
+Opens the linked document in the same frame as it was clicked (this is default).
+
+#### `_parent`
+
+Opens the linked document in the parent frame.
+
+#### `_top`
+
+Opens the linked document in the full body of the window.
+
+## Example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML Element: &lt;base&gt;</title>
+    <base href="https://frontendbeast.com/" target="_blank" />
+  </head>
+  <body>
+    <a href="html/base-element">Base Element</a>
+  </body>
+</html>
+```
+
+In this example, the `href` attribute of the `<base>` element is set to `https://frontendbeast.com/`. So, the relative URL `html/base-element` will be resolved to `https://frontendbeast.com/html/base-element`.
+
+## Best Practices
+
+- The `<base>` element should be placed inside the `<head>` element.
+- The `<base>` element should have the `href` attribute.
+- The `<base>` element should have the `target` attribute.
+
+## Advanced Features
+
+### Changing the base URL dynamically
+
+The `href` attribute of the `<base>` element can be changed dynamically using JavaScript.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <base id="baseTag" href="https://www.example.com/" />
+    <title>Dynamic Base URL</title>
+  </head>
+  <body>
+    <button onclick="changeBaseURL()">Change Base URL</button>
+    <script>
+      function changeBaseURL() {
+        const baseTag = document.getElementById("baseTag");
+        baseTag.href = "https://www.newexample.com/";
+      }
+    </script>
+  </body>
+</html>
+```
+
+In this example, the `href` attribute of the `<base>` element is changed to `https://www.newexample.com/` when the button is clicked.
+
+This is useful when you want to change the base URL of your website dynamically. If you are new to web development, you might not need this feature right now.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html>
+<head>
+  <base id="baseTag" href="https://www.example.com/">
+  <title>Dynamic Base URL</title>
+</head>
+<body>
+  <p>Base URL: https://www.example.com/</p>
+  <button onclick="changeBaseURL()">Change Base URL</button>
+  <p id="baseURLDisplay"></p>
+  
+  <script>
+    function changeBaseURL() {
+      const baseTag = document.getElementById('baseTag');
+      baseTag.href = 'https://www.newexample.com/';
+
+      const baseURL = baseTag.href;
+      const baseURLDisplay = document.getElementById('baseURLDisplay');
+      baseURLDisplay.textContent = 'New Base URL: ' + baseURL;
+    }
+
+  </script>
+</body>
+</html>`,
+  }}
+  />
