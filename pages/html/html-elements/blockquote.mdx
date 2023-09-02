@@ -1,0 +1,270 @@
+---
+title: <blockquote> Element - Introduction to HTML
+description: Learn about the HTML <blockquote> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<blockquote> - Introduction to HTML"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<blockquote>`
+
+The `<blockquote>` element in HTML is used to indicate that the enclosed text is a longer quotation from another source. It is typically used to distinguish quoted content from the rest of the text.
+
+## Syntax
+
+Here's the basic syntax of the `<blockquote>` element:
+
+```html
+<blockquote>Quoted text goes here.</blockquote>
+```
+
+**Output**
+
+<blockquote>Quoted text goes here.</blockquote>
+
+## Attributes
+
+The `<blockquote>` element supports the following attributes:
+
+### `cite`
+
+The `cite` attribute specifies the source of the quotation. It can be a URL or a string literal.
+
+```html
+<blockquote cite="https://www.example.com">Quoted text goes here.</blockquote>
+```
+
+### `lang`
+
+The `lang` attribute specifies the language of the quotation. It is used to indicate the language of the quotation in case it is different from the language of the rest of the document.
+
+```html
+<blockquote lang="en">Quoted text goes here.</blockquote>
+```
+
+### `dir`
+
+The `dir` attribute specifies the direction of the quotation. It can be either `ltr` (left-to-right) or `rtl` (right-to-left).
+
+```html
+<blockquote dir="rtl">Quoted text goes here.</blockquote>
+```
+
+**Output**
+
+<blockquote dir="rtl">Quoted text goes here.</blockquote>
+
+### `title`
+
+The `title` attribute specifies the title of the quotation. It is used to provide additional information about the quotation.
+
+```html
+<blockquote title="Quote by John Doe">Quoted text goes here.</blockquote>
+```
+
+**Output**
+
+<blockquote title="Quote by John Doe">Quoted text goes here.</blockquote>
+
+### `class`
+
+The `class` attribute is used to specify one or more class names for an element. It is used to associate the element with a particular style rule.
+
+```html
+<blockquote class="quote">Quoted text goes here.</blockquote>
+```
+
+**Output**
+
+export const StyledBlockquote = () => {
+  const isDarkTheme = useDarkTheme();
+  return (
+    <blockquote
+      style={{
+        backgroundColor: "gray",
+        color: "white",
+        padding: "1rem",
+        borderRadius: "0.5rem",
+      }}
+    >
+      Quoted text goes here.
+    </blockquote>
+  );
+};
+
+<StyledBlockquote />
+
+### `id`
+
+The `id` attribute is used to specify a unique id for an element. It is used to identify the element when linking using a fragment identifier.
+
+```html
+<blockquote id="quote">Quoted text goes here.</blockquote>
+```
+
+**Output**
+
+export const StyledIdBlockquote = () => {
+  const isDarkTheme = useDarkTheme();
+  return (
+    <blockquote
+      id="quote"
+      style={{
+        backgroundColor: isDarkTheme ? "#1f1f1f" : "#f1f1f1",
+        color: isDarkTheme ? "#f1f1f1" : "#1f1f1f",
+        padding: "1rem",
+        borderRadius: "0.5rem",
+      }}
+    >
+      Quoted text goes here.
+    </blockquote>
+  );
+};
+
+<StyledIdBlockquote />
+
+## Example
+
+### Basic Example
+
+```html
+<blockquote>The only way to do great work is to love what you do.</blockquote>
+```
+
+**Output**
+
+<blockquote>The only way to do great work is to love what you do.</blockquote>
+
+### With a Source Reference:
+
+```html
+<blockquote cite="https://www.brainyquote.com/quotes/steve_jobs_416859">
+  The only way to do great work is to love what you do.
+</blockquote>
+```
+
+**Output**
+
+<blockquote cite="https://www.brainyquote.com/quotes/steve_jobs_416859">
+  The only way to do great work is to love what you do.
+</blockquote>
+
+## Best Practices
+
+- Use the `<blockquote>` element to indicate that the enclosed text is a longer quotation from another source.
+- Always provide a `cite` attribute to indicate the source of the quotation.
+- Always provide a `lang` attribute to indicate the language of the quotation.
+- Style your blockquotes to make them visually distinct from regular text.
+
+## Advanced Features
+
+### Nested Blockquotes
+
+You can nest blockquotes inside other blockquotes to indicate that the enclosed text is a quotation within a quotation.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estetik Blokquote</title>
+    <style>
+      blockquote {
+        border-left: 2px solid #333;
+        padding-left: 20px;
+        margin: 0;
+      }
+
+      blockquote p {
+        font-style: italic;
+        margin: 0;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <blockquote>
+      <p>The only way to do great work is to love what you do.</p>
+      <blockquote>
+        <p>If you haven't found it yet, keep looking. Don't settle.</p>
+      </blockquote>
+    </blockquote>
+  </body>
+</html>
+```
+
+**Output**
+
+export const NestedBlockquote = () => {
+  const isDarkTheme = useDarkTheme();
+  return (
+    <blockquote
+      style={{
+        borderLeft: "2px solid #333",
+        paddingLeft: "20px",
+        margin: "0",
+      }}
+    >
+      <p style={{ fontStyle: "italic", margin: "0", padding: "10px 0" }}>
+        The only way to do great work is to love what you do.
+      </p>
+      <blockquote
+        style={{
+          borderLeft: "2px solid #333",
+          paddingLeft: "20px",
+          margin: "0",
+        }}
+      >
+        <p style={{ fontStyle: "italic", margin: "0", padding: "10px 0" }}>
+          If you haven't found it yet, keep looking. Don't settle.
+        </p>
+      </blockquote>
+    </blockquote>
+  );
+};
+
+<NestedBlockquote />
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estetik Blokquote</title>
+    <style>
+        blockquote {
+            border-left: 2px solid #333;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        blockquote p {
+            font-style: italic;
+            margin: 0;
+            padding: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+    <blockquote>
+        <p>The only way to do great work is to love what you do.</p>
+        <blockquote>
+            <p>If you haven't found it yet, keep looking. Don't settle.</p>
+        </blockquote>
+    </blockquote>
+</body>
+</html>`,
+  }}
+/>

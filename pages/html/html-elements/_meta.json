@@ -6,5 +6,6 @@
   "aside": "<aside>",
   "audio": "<audio>",
   "b": "<b>",
-  "base": "<base>"
+  "base": "<base>",
+  "blockquote": "<blockquote>"
 }
