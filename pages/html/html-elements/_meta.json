@@ -8,5 +8,6 @@
   "b": "<b>",
   "base": "<base>",
   "blockquote": "<blockquote>",
-  "body": "<body>"
+  "body": "<body>",
+  "br": "<br>"
 }

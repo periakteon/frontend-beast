@@ -1,0 +1,182 @@
+---
+title: <br> Element - Introduction to HTML
+description: Learn about the HTML <br> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<br> - Introduction to HTML"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<br>`
+
+The `<br>` element, also known as the **line break** element, is used to insert a line break within text or content.
+
+## Syntax
+
+Its syntax is straightforward and consists of a single, **self-closing** tag:
+
+```html
+<br />
+```
+
+## Attributes
+
+The `<br>` element has no required attributes, but it does support a few optional attributes for additional control:
+
+### `clear`
+
+The `clear` attribute specifies how the line break should behave in relation to floating elements. It accepts one of the following values:
+
+- `left`: The line break will clear all floating elements to the left.
+- `right`: The line break will clear all floating elements to the right.
+- `all`: The line break will clear all floating elements to the left and right.
+
+## Examples
+
+### Basic Example
+
+```html {2}
+<p>
+  This is a <br />
+  line break.
+</p>
+```
+
+**Output:**
+
+export const BasicExample = () => {
+  return (
+    <p>
+      This is a <br /> line break.
+    </p>
+  );
+};
+
+<BasicExample />
+
+### Clearing Floating Elements
+
+```html {1}
+This is some text that clears to the left.<br clear="left" />
+This is text that wraps around the line break.
+```
+
+**Output:**
+
+export const ClearingFloatingElements = () => {
+  return (
+    <>
+      <p>
+        This is some text that clears to the left.
+        <br clear="left" />
+        This is text that wraps around the line break.
+      </p>
+    </>
+  );
+};
+
+<ClearingFloatingElements />
+
+## Best Practices
+
+To ensure clean and maintainable HTML code, it's essential to follow best practices when using the `<br>` element:
+
+- **Use `<br>` sparingly:** Avoid excessive use of line breaks; instead, structure your content with appropriate HTML elements like _paragraphs_ and _headings_.
+- **Favor [CSS](/css) for layout:** Use CSS for controlling spacing and layout whenever possible rather than relying on line breaks for formatting.
+
+## Advanced Features
+
+While `<br>` is a simple element, it can be creatively used in more advanced scenarios:
+
+### Custom Line Spacing
+
+You can use CSS in conjunction with `<br>` to achieve custom line spacing for text.
+
+```html {2}
+<p>This is some text.</p>
+<p style="line-height: 2em;">This text has increased line spacing.<br /></p>
+<p>Back to normal spacing.</p>
+```
+
+**Output:**
+
+export const CustomLineSpacing = () => {
+  return (
+    <>
+      <p>This is some text.</p>
+      <p style={{ lineHeight: "2em" }}>
+        This text has increased line spacing.
+        <br />
+      </p>
+      <p>Back to normal spacing.</p>
+    </>
+  );
+};
+
+<CustomLineSpacing />
+
+### Hidden Line Breaks
+
+You can use [**CSS**](/css) to hide line breaks in specific situations or screen sizes, providing responsive design.
+
+```html filename="index.html" {2}
+<p>This is some text.</p>
+<p class="hide-line-break">This text will wrap without a line break.<br /></p>
+<p>Normal flow.</p>
+```
+
+```css filename="styles.css"
+@media (max-width: 600px) {
+  .hide-line-break {
+    display: none;
+  }
+}
+```
+
+**Output:**
+
+export const HiddenLineBreaks = () => {
+  return (
+    <>
+      <p>This is some text.</p>
+      <p className="hide-line-break">
+        This text will wrap without a line break.
+        <br />
+      </p>
+      <p>Normal flow.</p>
+    </>
+  );
+};
+
+<HiddenLineBreaks />
+
+Remember to use advanced usages judiciously and maintain accessibility and readability in your HTML code.
+
+In summary, the `<br>` element is a simple yet useful tool for introducing line breaks in HTML content. While it has limited attributes and straightforward syntax, it should be used thoughtfully and sparingly, with [**CSS**](/css) often being a more powerful tool for controlling layout and spacing.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML Element: <br></title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+    <body>
+      <p>This is a <br> line break.</p>
+    </body>
+</html>`,
+  }}
+/>
