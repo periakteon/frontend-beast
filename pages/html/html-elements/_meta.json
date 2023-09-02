@@ -4,5 +4,6 @@
   "a": "<a>",
   "article": "<article>",
   "aside": "<aside>",
-  "audio": "<audio>"
+  "audio": "<audio>",
+  "b": "<b>"
 }

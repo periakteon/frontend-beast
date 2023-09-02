@@ -1,0 +1,348 @@
+---
+title: <b> Element - Introduction to HTML
+description: Learn about the HTML <b> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<b> - Introduction to HTML"
+---
+
+import React from "react";
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<b>`
+
+The `<b>` element in HTML is used to apply bold formatting to text content within an HTML document. It is an inline-level element, which means it doesn't require a closing tag.
+
+## Syntax
+
+Here's the basic syntax of the `<b>` element:
+
+```html
+<b>This text will be bold.</b>
+```
+
+**Output:**
+
+<b>This text will be bold.</b>
+
+## Attributes
+
+While the `<b>` element itself doesn't have specific attributes, it can accept a range of global attributes that are applicable to most HTML elements. Let's delve into these attributes with explanations and examples:
+
+### `class`
+
+The `class` attribute is used to specify one or more class names for an HTML element. The class name can be used by [**CSS**](/css) and JavaScript to perform certain tasks for elements with the specified class name.
+
+```html
+<b class="highlight">This text will be bold.</b>
+```
+
+**Output:**
+
+export const BoldAndClass = () => {
+  return (
+    <div>
+      <style>
+        {`
+                    .highlight {
+                        background-color: #ff0;
+                    }
+                `}
+      </style>
+      <b className="highlight">This text will be bold and highlighted.</b>
+    </div>
+  );
+};
+
+<BoldAndClass />
+
+<Callout type="info" emoji="ℹ️">
+  The class `highlight` is used to highlight the text with a yellow background.
+  The class is defined in the `style` tag. If you don't define the class, the
+  text will be bold but not highlighted.
+</Callout>
+
+Check out the following example to see how the `class` attribute works:
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <style>
+    .highlight {
+        background-color: #ff0;
+    }
+  </style>
+  </head>
+  <body>
+    <b class="highlight">This text will be bold and highlighted.</b>
+  </body>
+</html>`,
+  }}
+/>
+
+### `id`
+
+The `id` attribute is used to specify a **unique** id for an HTML element. The id must be **unique** within the HTML document.
+
+```html
+<b id="highlight">This text will be bold.</b>
+```
+
+**Output:**
+
+export const BoldAndId = () => {
+  return (
+    <div>
+      <style>
+        {`
+                    #highlight {
+                        background-color: #ff0;
+                    }
+                `}
+      </style>
+      <b id="highlight">This text will be bold and highlighted.</b>
+    </div>
+  );
+};
+
+<BoldAndId />
+
+### `style`
+
+The `style` attribute is used to specify inline [**CSS**](/css) styles for an HTML element. The styles specified in the `style` attribute will override the styles specified in the `style` tag or in an external [**CSS**](/css) file.
+
+```html
+<b style="background-color: #0f67bf; color: #fff;"
+  >This text will be bold and background color will be blue.</b
+>
+```
+
+**Output:**
+
+export const BoldAndStyle = () => {
+  return (
+    <div>
+      <b style={{ backgroundColor: "#0f67bf", color: "#fff" }}>
+        This text will be bold and background color will be blue.
+      </b>
+    </div>
+  );
+};
+
+<BoldAndStyle />
+
+### `title`
+
+The `title` attribute is used to specify extra information about an HTML element. The information specified in the `title` attribute is displayed as a tooltip when the user hovers over the element.
+
+```html
+<b title="This text will be bold.">This text will be bold.</b>
+```
+
+**Output:**
+
+<b title="This is the title.">This text will be bold.</b>
+
+## Examples
+
+### Example 1
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>'b' Example</title>
+    <style>
+      .important {
+        color: red;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This is a <b class="important">bold</b> word.</p>
+  </body>
+</html>
+```
+
+**Output:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'b' Example</title>
+    <style>
+        .important {
+            color: red;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a <b class="important">bold</b> word.</p>
+</body>
+</html>`,
+  }}
+/>
+
+### Example 2
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>'b' Example</title>
+    <style>
+      #note {
+        background-color: blue;
+        color: white;
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This is a <b id="note">bold</b> word.</p>
+  </body>
+</html>
+```
+
+**Output:**
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>'b' Example</title>
+    <style>
+        #note {
+            background-color: blue;
+            color: white;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a <b id="note">bold</b> word.</p>
+</body>
+</html>`,
+  }}
+/>
+
+## Best Practices
+
+When using the `<b>` element, consider these best practices:
+
+### Semantic Meaning
+
+The `<b>` element is primarily presentational. For semantic emphasis, consider using the [`<strong>`](/html/html-elements/strong) element, which carries more weight in terms of importance and is used for strong importance or urgency.
+
+```html
+<p>This is <strong>really important</strong>!</p>
+```
+
+**Output:**
+
+<p>
+  This is <strong>really important</strong>!
+</p>
+
+### Accessibility
+
+The `<b>` element is _not_ a semantic element, so it doesn't convey any meaning to assistive technologies. If you want to convey meaning, consider using the [`<strong>`](/html/html-elements/strong) element instead.
+
+### Styling
+
+While `<b>` can be used for styling, it's often better to use [**CSS**](/css) for presentation to separate content from design. [**CSS**](/css) provides more flexibility and maintains better separation of concerns.
+
+```html
+<p style="font-weight: bold;">This is bold text using CSS.</p>
+```
+
+**Output:**
+
+export const BoldAndStyling = () => {
+  return (
+    <div>
+      <p style={{ fontWeight: "bold" }}>This is bold text using CSS.</p>
+    </div>
+  );
+};
+
+<BoldAndStyling />
+
+## Advanced Features
+
+Advanced usage of the `<b>` element typically involves combining it with other HTML elements and [**CSS**](/css) for precise styling. Here are a couple of advanced examples:
+
+### Example 1
+
+You can combine the `<b>` element with a `<span>` element to apply specific styles to a portion of text:
+
+```html
+<p>
+  This is a
+  <span style="font-style: italic;"><b>bold and italic</b></span> word.
+</p>
+```
+
+**Output:**
+
+export const BoldAndSpan = () => {
+  return (
+    <div>
+      <p>
+        This is a{" "}
+        <span style={{ fontStyle: "italic" }}>
+          <b>bold and italic</b>
+        </span>{" "}
+        word.
+      </p>
+    </div>
+  );
+};
+
+<BoldAndSpan />
+
+## Playground
+
+Feel free to play around with the following code to see how the `<b>` element works:
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>'b' Example</title>
+    <style>
+        #note {
+            background-color: blue;
+            color: white;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a <b id="note">bold</b> word.</p>
+</body>
+</html>`,
+  }}
+/>
