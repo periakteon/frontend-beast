@@ -77,7 +77,7 @@ export default async function handler(req: NextRequest) {
               color: "black",
               lineHeight: 1.4,
               whiteSpace: "pre-wrap",
-              marginTop: -15,
+              marginTop: 20,
             }}
           >
             {desc}
