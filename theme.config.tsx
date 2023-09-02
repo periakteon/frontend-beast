@@ -170,20 +170,20 @@ const config = {
         <link rel="manifest" href="/site.webmanifest" />
         <meta
           name="keywords"
-          content="HTML basics, CSS styling, JavaScript fundamentals, Front-End Beast, The Front-End Beast, Front-end web development, Web development tutorials, Front-end coding, Full Stack learning, Responsive web design, Web development courses, HTML5 features, CSS3 techniques, Interactive web projects, JavaScript frameworks, Front-end optimization, UI/UX design, Progressive web apps, Next.js development, Browser compatibility, Web coding best practices, JavaScript libraries, SEO-friendly websites, Front-end performance, Node.js, Web app development, Tailwind CSS tips"
+          content="HTML, CSS, JavaScript, Front-End Beast, Web development, Full Stack, Responsive design, HTML5, CSS3, Interactive projects, JavaScript frameworks, UI/UX, Progressive web apps, Next.js, Browser compatibility, Best practices, JavaScript libraries, SEO, Performance, Node.js, Tailwind CSS"
         />
         <meta
           property="description"
           content={
             meta.description ||
-            "Welcome to The Front-End Beast – your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks, optimize front-end performance, and discover the power of Next.js development. Whether you're a beginner or aiming for full-stack expertise, our Front-End Beast has everything you need for becoming a web development pro."
+            "Welcome to The Front-End Beast - your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks and optimize front-end performance."
           }
         />
         <meta
           property="og:description"
           content={
             meta.description ||
-            "Welcome to The Front-End Beast – your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks, optimize front-end performance, and discover the power of Next.js development. Whether you're a beginner or aiming for full-stack expertise, our Front-End Beast has everything you need for becoming a web development pro."
+            "Welcome to The Front-End Beast - your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks and optimize front-end performance."
           }
         />
         <meta
