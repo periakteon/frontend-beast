@@ -7,5 +7,6 @@
   "audio": "<audio>",
   "b": "<b>",
   "base": "<base>",
-  "blockquote": "<blockquote>"
+  "blockquote": "<blockquote>",
+  "body": "<body>"
 }

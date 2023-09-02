@@ -1,0 +1,153 @@
+---
+title: <body> Element - Introduction to HTML
+description: Learn about the HTML <body> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<body> - Introduction to HTML"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<body>`
+
+The `<body>` element is a crucial part of an HTML document, serving as the container for the visible content of a web page.
+
+## Syntax
+
+Here's the basic syntax of the `<body>` element:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Head content goes here -->
+  </head>
+  <body>
+    <!-- Visible content goes here -->
+  </body>
+</html>
+```
+
+## Attributes
+
+The `<body>` element supports various attributes to enhance its functionality:
+
+### `onload`
+
+The `onload` attribute is used to specify a script to run when the page loads. It is commonly used to perform actions that need to be performed as soon as the page loads such as fetching data from an API, displaying a welcome message, etc.
+
+```html
+<body onload="alert('Welcome to Frontend Beast!')">
+  <!-- Visible content goes here -->
+</body>
+```
+
+### `onunload`
+
+The `onunload` attribute is used to specify a script to run when the page unloads. It is commonly used to perform actions that need to be performed before the page unloads such as saving the user's progress, etc.
+
+```html
+<body onunload="alert('Thank you for visiting Frontend Beast!')">
+  <!-- Visible content goes here -->
+</body>
+```
+
+### `onfocus`
+
+The `onfocus` attribute is used to specify a script to run when the page gains focus. It is commonly used to perform actions that need to be performed when the user focuses on the page such as displaying a welcome message, etc.
+
+```html
+<body onfocus="alert('Welcome back to Frontend Beast!')">
+  <!-- Visible content goes here -->
+</body>
+```
+
+### `onblur`
+
+The `onblur` attribute is used to specify a script to run when the page loses focus. It is commonly used to perform actions that need to be performed when the user leaves the page such as saving the user's progress, etc.
+
+```html
+<body onblur="alert('Thank you for visiting Frontend Beast!')">
+  <!-- Visible content goes here -->
+</body>
+```
+
+## Example
+
+Here's an example of the `<body>` element in action:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frontend Beast</title>
+  </head>
+  <body>
+    <div style="padding: 0.5rem; border: 1px solid #ccc;">
+      <h5>Welcome to Frontend Beast!</h5>
+      <p>Learn HTML, CSS, and JavaScript for free.</p>
+    </div>
+  </body>
+</html>
+```
+
+**Output**
+
+export const BodyExample = () => {
+  return (
+    <div style={{ padding: "0.5rem", border: "1px solid #ccc" }}>
+      <h5> Welcome to Frontend Beast! </h5>
+      <p> Learn HTML, CSS, and JavaScript for free. </p>
+    </div>
+  );
+};
+
+<BodyExample />
+
+## Best Practices
+
+To ensure well-structured and accessible web pages, follow these best practices when using the `<body>` element:
+
+- Always include the `<body>` element in your HTML document.
+- Avoid using the `onload`, `onunload`, `onfocus`, and `onblur` attributes as they are not recommended for use in HTML5.
+- Avoid using inline styles and scripts in the `<body>` element. Instead, use external stylesheets and scripts.
+- Avoid using the `<body>` element as a container for the entire page. Instead, use the `<main>` element as the main container for the page content.
+- Use semantic elements such as `<header>`, `<nav>`, `<main>`, `<footer>`, etc. to structure the content of your page.
+- Use meaningful text and alt attributes for images to improve accessibility.
+- Ensure your content is mobile-responsive by using CSS media queries.
+- Keep JavaScript code at the end of the `body` to improve page loading speed.
+- Test your page in various browsers for compatibility.
+
+## Advanced Features
+
+The `<body>` element supports various advanced features to enhance its functionality:
+
+- Integrating third-party scripts: You can include scripts for analytics, chat widgets, or social media integration within the `<body>` element.
+- Implementing lazy loading: Use JavaScript to load images and other resources only when they come into the user's viewport, optimizing performance.
+- Implementing dark mode: Use JavaScript to toggle between light and dark mode based on the user's preference.
+
+In summary, the `<body>` element in HTML is the container for the visible content of a web page. It supports various attributes and should be used following best practices for a well-structured and accessible website. Additionally, you can leverage it for advanced functionalities to enhance user experience.
+""
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend Beast</title>
+</head>
+<body>
+    <div style="padding: 0.5rem; border: 1px solid #ccc;">
+        <h5>Welcome to Frontend Beast!</h5>
+        <p>Learn HTML, CSS, and JavaScript for free.</p>
+    </div>
+</body>
+</html>`,
+  }}
+/>

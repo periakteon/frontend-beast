@@ -27,3 +27,26 @@ Here's the basic syntax of the `<b>` element:
 ## Advanced Features
 
 ## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>'b' Example</title>
+    <style>
+        #note {
+            background-color: blue;
+            color: white;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a <b id="note">bold</b> word.</p>
+</body>
+</html>`,
+  }}
+/>
