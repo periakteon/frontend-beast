@@ -125,6 +125,7 @@ const config = {
     return (
       <>
         <meta charSet="UTF-8" />
+        <meta name="yandex-verification" content="ce6ffa0fa2b08cf2" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link rel="canonical" href="https://frontendbeast.com" />
         <meta
