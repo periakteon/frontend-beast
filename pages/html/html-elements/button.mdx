@@ -1,0 +1,411 @@
+---
+title: <button> Element - Introduction to HTML
+description: Learn about the HTML <button> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element:&desc=<button> - Introduction to HTML"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# Element: `<button>`
+
+The `<button>` element in HTML is used to create a clickable button. It can be used to create a button that performs an action when clicked, or to create a button that submits a form.
+
+## Syntax
+
+Here's the basic syntax of the `<button>` element:
+
+```html
+<button>Button Text</button>
+```
+
+**Output:**
+
+export const Button = () => {
+  return (
+    <button
+      style={{
+        padding: "0.5rem",
+        margin: "0.5rem",
+        backgroundColor: "dodgerblue",
+        color: "white",
+        borderRadius: "0.25rem",
+        border: "slateblue 1px solid",
+        cursor: "pointer",
+        transition: "background-color 0.3s",
+      }}
+    >
+      Button Text
+    </button>
+  );
+};
+
+<Button />
+
+You can place any text or content between the opening and closing `<button>` tags to label the button.
+
+## Attributes
+
+The `<button>` element supports various attributes to enhance its functionality:
+
+### `disabled`
+
+The `disabled` attribute is used to disable the button. A disabled button cannot be clicked.
+
+```html
+<button disabled>Disabled Button</button>
+```
+
+**Output:**
+
+export const DisabledButton = () => {
+  return (
+    <button
+      disabled
+      style={{
+        padding: "0.5rem",
+        margin: "0.5rem",
+        backgroundColor: "dodgerblue",
+        color: "white",
+        borderRadius: "0.25rem",
+        border: "slateblue 1px solid",
+        cursor: "not-allowed",
+        transition: "background-color 0.3s",
+      }}
+    >
+      Disabled Button
+    </button>
+  );
+};
+
+<DisabledButton />
+
+### `form`
+
+The `form` attribute is used to associate the button with a form. The value of the `form` attribute must be the `id` of the form.
+
+```html
+<form id="form1">
+  <button form="form1">Submit</button>
+</form>
+```
+
+**Output:**
+
+export const FormButton = () => {
+  return (
+    <form id="form1">
+      <button
+        form="form1"
+        style={{
+          padding: "0.5rem",
+          margin: "0.5rem",
+          backgroundColor: "dodgerblue",
+          color: "white",
+          borderRadius: "0.25rem",
+          border: "slateblue 1px solid",
+          cursor: "pointer",
+          transition: "background-color 0.3s",
+        }}
+      >
+        Submit
+      </button>
+    </form>
+  );
+};
+
+<FormButton />
+
+### `type`
+
+The `type` attribute is used to specify the type of the button. The default value of the `type` attribute is `submit`. The other possible values are `button` and `reset`.
+
+```html
+<button type="button">Button</button> <button type="reset">Reset</button>
+```
+
+**Output:**
+
+export const ButtonTypes = () => {
+  return (
+    <>
+      <button
+        type="button"
+        style={{
+          padding: "0.5rem",
+          margin: "0.5rem",
+          backgroundColor: "dodgerblue",
+          color: "white",
+          borderRadius: "0.25rem",
+          border: "slateblue 1px solid",
+          cursor: "pointer",
+          transition: "background-color 0.3s",
+        }}
+      >
+        Button
+      </button>
+      <button
+        type="reset"
+        style={{
+          padding: "0.5rem",
+          margin: "0.5rem",
+          backgroundColor: "dodgerblue",
+          color: "white",
+          borderRadius: "0.25rem",
+          border: "slateblue 1px solid",
+          cursor: "pointer",
+          transition: "background-color 0.3s",
+        }}
+      >
+        Reset
+      </button>
+    </>
+  );
+};
+
+<ButtonTypes />
+
+### `name`
+
+The `name` attribute is used to specify the name of the button. The value of the `name` attribute is sent to the server when the form is submitted.
+
+```html
+<button name="submit">Submit</button>
+```
+
+**Output:**
+
+export const ButtonName = () => {
+  return (
+    <button
+      name="submit"
+      style={{
+        padding: "0.5rem",
+        margin: "0.5rem",
+        backgroundColor: "dodgerblue",
+        color: "white",
+        borderRadius: "0.25rem",
+        border: "slateblue 1px solid",
+        cursor: "pointer",
+        transition: "background-color 0.3s",
+      }}
+    >
+      Submit
+    </button>
+  );
+};
+
+<ButtonName />
+
+### `value`
+
+The `value` attribute is used to specify the value of the button. The value of the `value` attribute is sent to the server when the form is submitted.
+
+```html
+<button value="submit">Submit</button>
+```
+
+**Output:**
+
+export const ButtonValue = () => {
+  return (
+    <button
+      value="submit"
+      style={{
+        padding: "0.5rem",
+        margin: "0.5rem",
+        backgroundColor: "dodgerblue",
+        color: "white",
+        borderRadius: "0.25rem",
+        border: "slateblue 1px solid",
+        cursor: "pointer",
+        transition: "background-color 0.3s",
+      }}
+    >
+      Submit
+    </button>
+  );
+};
+
+<ButtonValue />
+
+### `autofocus`
+
+The `autofocus` attribute is used to specify that the button should automatically get focus when the page loads.
+
+```html
+<button autofocus>Submit</button>
+```
+
+**Output:**
+
+export const ButtonAutofocus = () => {
+  return (
+    <button
+      autoFocus
+      style={{
+        padding: "0.5rem",
+        margin: "0.5rem",
+        backgroundColor: "dodgerblue",
+        color: "white",
+        borderRadius: "0.25rem",
+        border: "slateblue 1px solid",
+        cursor: "pointer",
+        transition: "background-color 0.3s",
+      }}
+    >
+      Submit
+    </button>
+  );
+};
+
+<ButtonAutofocus />
+
+## Example
+
+Here are some examples of how to use the `<button>` element:
+
+### Basic Button
+
+```html
+<button>Submit</button>
+```
+
+### Disabled Button
+
+```html
+<button disabled>Submit</button>
+```
+
+### Button with Form
+
+```html
+<form id="form1">
+  <button form="form1">Submit</button>
+</form>
+```
+
+### Button with Type
+
+```html
+<button type="button">Button</button> <button type="reset">Reset</button>
+```
+
+## Best Practices
+
+Here are some best practices to follow when using the `<button>` element:
+
+- Always provide meaningful text within the `<button>` element.
+- Always specify the `type` attribute of the `<button>` element. The default value of the `type` attribute is `submit`, which can cause unexpected behavior.
+- Always specify the `name` and `value` attributes of the `<button>` element when using it inside a form. This will ensure that the value of the button is sent to the server when the form is submitted.
+- Always specify the `disabled` attribute of the `<button>` element when you want to disable it. This will ensure that the button cannot be clicked.
+- Ensure buttons have clear and concise labels for screen readers.
+- Use [**CSS**](/css) to style buttons consistently with your website's design.
+
+## Advanced Features
+
+Buttons can be used in various advanced scenarios, such as:
+
+- Triggering JavaScript functions when clicked.
+- Creating custom-styled buttons with CSS.
+- Using JavaScript to dynamically change button properties.
+- Building interactive elements like modals and dropdowns.
+
+For example, you can use JavaScript to handle button clicks and perform actions like showing/hiding content, submitting forms via AJAX, or navigating to different parts of your web application.
+
+Remember to always test your buttons across different browsers and devices to ensure they work as expected.
+
+This comprehensive guide covers the syntax, attributes, examples, best practices, and advanced usages of the HTML `<button>` element. It's a versatile element that plays a crucial role in web development for user interaction and form submission.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit" onclick="showAlert()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function showAlert() {
+            alert("Registration Successful!");
+        }
+    </script>
+</body>
+</html>`,
+  }}
+/>

@@ -9,5 +9,6 @@
   "base": "<base>",
   "blockquote": "<blockquote>",
   "body": "<body>",
-  "br": "<br>"
+  "br": "<br>",
+  "button": "<button>"
 }
