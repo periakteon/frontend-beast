@@ -23,7 +23,7 @@ export default async function handler(req: NextRequest) {
       (
         <div
           style={{
-            backgroundColor: "white",
+            backgroundColor: "#F0FFFF",
             backgroundSize: "150px 150px",
             height: "100%",
             width: "100%",
@@ -54,7 +54,10 @@ export default async function handler(req: NextRequest) {
                 marginLeft: 20,
               }}
             >
-              Front-End Beast
+              Front-End{" "}
+              <span style={{ color: "#0f67bf", marginLeft: "1rem" }}>
+                Beast
+              </span>
             </p>
           </div>
           <p
