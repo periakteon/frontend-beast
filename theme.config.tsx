@@ -176,14 +176,14 @@ const config = {
           property="description"
           content={
             meta.description ||
-            "Welcome to The Front-End Beast - your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks and optimize front-end performance."
+            "Welcome to The Front-End Beast - your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects."
           }
         />
         <meta
           property="og:description"
           content={
             meta.description ||
-            "Welcome to The Front-End Beast - your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects. Learn responsive web design, explore JavaScript frameworks and optimize front-end performance."
+            "Welcome to The Front-End Beast - your ultimate resource for mastering HTML basics, CSS styling, and JavaScript fundamentals. Dive into the world of front-end web development with our comprehensive tutorials, courses, and interactive projects."
           }
         />
         <meta
