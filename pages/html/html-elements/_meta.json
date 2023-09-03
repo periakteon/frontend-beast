@@ -11,5 +11,6 @@
   "body": "<body>",
   "br": "<br>",
   "button": "<button>",
-  "caption": "<caption>"
+  "caption": "<caption>",
+  "cite": "<cite>"
 }

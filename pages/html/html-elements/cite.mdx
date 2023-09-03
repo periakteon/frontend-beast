@@ -1,0 +1,197 @@
+---
+title: <cite> Element - Introduction to HTML
+description: Learn about the HTML <cite> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - cite&desc=Learn about the button element, its syntax, attributes, best practices."
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<cite>`
+
+The `<cite>` element in HTML is used to mark up the title of a creative work, such as a book, movie, song, or other piece of content that you want to **reference** or **emphasize**.
+
+## Syntax
+
+Its syntax is quite straightforward:
+
+```html
+<cite>Text to be cited</cite>
+```
+
+## Attributes
+
+The `<cite>` element has a few attributes that can be used to provide additional information:
+
+### `title`
+
+The `title` attribute can be used to provide additional information about the cited work. It is displayed as a tooltip when the user hovers over the element.
+
+```html
+<cite title="The title of the cited work">Text to be cited</cite>
+```
+
+**Output:**
+
+<cite title="The title of the cited work">Text to be cited</cite>
+
+_(Hover over the element to see the tooltip)_
+
+## Example
+
+### Basic Usage
+
+```html
+<p>
+  According to <cite>Shakespeare's Sonnet 18</cite>, "Shall I compare thee to a
+  summer's day?"
+</p>
+```
+
+**Output:**
+
+<p>
+  According to <cite>Shakespeare's Sonnet 18</cite>, "Shall I compare thee to a
+  summer's day?"
+</p>
+
+### With `title` Attribute
+
+```html
+<p>
+  According to <cite title="Shakespeare's Sonnet 18">Sonnet 18</cite>, "Shall I
+  compare thee to a summer's day?"
+</p>
+```
+
+**Output:**
+
+<p>
+  According to <cite title="Shakespeare's Sonnet 18">Sonnet 18</cite>, "Shall I
+  compare thee to a summer's day?"
+</p>
+
+_(Hover over the element to see the tooltip)_
+
+## Best Practices
+
+To ensure proper usage of the `<cite>` element, consider the following best practices:
+
+- Use `<cite>` for the titles of creative works like books, movies, songs, etc.
+- Include relevant information in the `title` attribute for additional context.
+- Avoid using `<cite>` for generic or non-creative work titles.
+
+## Advanced Features
+
+While `<cite>` is primarily used for citing titles, you can get creative with it in more advanced scenarios:
+
+### Advanced Usage 1: Citing Multiple Works
+
+You can use multiple `<cite>` elements for citing multiple works in a single sentence.
+
+```html
+<p>
+  According to <cite>Shakespeare's Sonnet 18</cite> and
+  <cite>Keats' Ode to a Nightingale</cite>,...
+</p>
+```
+
+**Output:**
+
+<p>
+  According to <cite>Shakespeare's Sonnet 18</cite> and{" "}
+  <cite>Keats' Ode to a Nightingale</cite>,...
+</p>
+
+### Advanced Usage 2: Styling
+
+You can style the `<cite>` element using [**CSS**](/css) to match your design requirements.
+
+```html
+<style>
+  cite {
+    font-style: italic;
+    color: #0077b6;
+  }
+</style>
+<p>According to <cite>Shakespeare's Sonnet 18</cite>,...</p>
+```
+
+**Output:**
+
+export const Styling = () => {
+  return (
+    <p>
+      According to {""}
+      <cite style={{ fontStyle: "italic", color: "#0077b6" }}>
+        Shakespeare's Sonnet 18
+      </cite>, ...
+    </p>
+  );
+};
+
+<Styling />
+
+Remember, the `<cite>` element is a valuable tool for providing proper attribution and citation within your HTML content. Using it correctly can enhance the clarity and professionalism of your web pages.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex HTML Example with <cite> Element</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        cite {
+            font-style: italic;
+            color: #0077b6;
+        }
+
+        .quote {
+            border-left: 2px solid #0077b6;
+            padding-left: 10px;
+            margin: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Exploring the Beauty of Nature</h1>
+    </header>
+
+    <section>
+        <h2>Quotes from Famous Naturalists</h2>
+        <p class="quote">"In every walk with nature, one receives far more than he seeks." - <cite>John Muir</cite></p>
+        <p class="quote">"Look deep into nature, and then you will understand everything better." - <cite>Albert Einstein</cite></p>
+    </section>
+
+    <section>
+        <h2>Books About Nature</h2>
+        <ul>
+            <li><cite title="Henry David Thoreau, Walden, 1854">Walden</cite> by Henry David Thoreau</li>
+            <li><cite title="Rachel Carson, Silent Spring, 1962">Silent Spring</cite> by Rachel Carson</li>
+            <li><cite title="Aldo Leopold, A Sand County Almanac, 1949">A Sand County Almanac</cite> by Aldo Leopold</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Nature Lovers Society</p>
+    </footer>
+
+</body>
+</html>`,
+  }}
+/>
