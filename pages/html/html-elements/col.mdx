@@ -1,0 +1,189 @@
+---
+title: <col> Element - Introduction to HTML
+description: Learn about the HTML <col> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - col&desc=Learn about the col element, its syntax, attributes, best practices."
+---
+
+import { useState, useEffect } from "react";
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<col>`
+
+The `<col>` element in HTML is used within a [**`<colgroup>`**](/html/html-elements/colgroup) element to define properties for columns in an HTML table.
+
+## Syntax
+
+Here's the basic syntax of the `<col>` element:
+
+```html
+<col />
+```
+
+The `<col>` element is an empty element, meaning it doesn't have a closing tag.
+
+## Attributes
+
+The `<col>` element supports the following attributes:
+
+### `span`
+
+The `span` attribute specifies the number of columns the `<col>` element should span. The default value is `1`.
+
+```html
+<col span="2" />
+```
+
+**Output:**
+
+<Callout type="warning">
+  <p>The `span` attribute is not supported in Internet Explorer.</p>
+</Callout>
+
+## Example
+
+Here's an example of the `<col>` element in action:
+
+```html
+<table>
+  <colgroup>
+    <col span="2" style="background-color: red;" />
+    <col style="background-color: yellow;" />
+  </colgroup>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>Doe</td>
+    <td>28</td>
+  </tr>
+</table>
+```
+
+**Output:**
+
+export const ColExample = () => {
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
+
+return (
+
+<table>
+  <colgroup>
+    <col span="2" style={{ backgroundColor: "red" }} />
+    <col style={{ backgroundColor: "yellow" }} />
+  </colgroup>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>Doe</td>
+    <td>28</td>
+  </tr>
+</table>
+); };
+
+<ColExample />
+
+## Best Practices
+
+- Use `<col>` elements within a `<colgroup>` for better organization and control of column attributes.
+- Avoid using the width attribute and prefer [**CSS**](/css) for styling to ensure better responsiveness.
+- Keep the use of `<col>` elements minimal for simpler tables, as they are more beneficial for larger tables with complex layouts.
+
+## Advanced Features
+
+- Combining `<col>` elements with [**CSS**](/css) classes for fine-grained control over styling.
+- Using JavaScript to dynamically modify `<col>` attributes based on user interactions.
+- Employing media queries to adjust column properties based on screen size for responsive tables.
+
+These advanced usages can help you create more dynamic and responsive tables using the `<col>` element in HTML.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        .highlight {
+            background-color: #ffc107;
+        }
+    </style>
+    <title>Complex <col> Usage</title>
+</head>
+<body>
+    <h1>Complex <col> Usage Example</h1>
+    <table>
+        <colgroup>
+            <col span="2" style="background-color: #e0e0e0;">
+            <col width="100" style="background-color: #f0f0f0;">
+            <col align="right" style="background-color: #e0e0e0;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th class="highlight">Header 3</th>
+                <th>Header 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td class="highlight">Data 3</td>
+                <td>Data 4</td>
+            </tr>
+            <tr>
+                <td>Data 5</td>
+                <td>Data 6</td>
+                <td class="highlight">Data 7</td>
+                <td>Data 8</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>`,
+  }}
+/>

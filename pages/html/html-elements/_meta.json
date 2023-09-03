@@ -13,5 +13,6 @@
   "button": "<button>",
   "caption": "<caption>",
   "cite": "<cite>",
-  "code": "<code>"
+  "code": "<code>",
+  "col": "<col>"
 }
