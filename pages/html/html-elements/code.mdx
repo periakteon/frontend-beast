@@ -1,0 +1,226 @@
+---
+title: <code> Element - Introduction to HTML
+description: Learn about the HTML <code> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - code&desc=Learn about the code element, its syntax, attributes, best practices."
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<code>`
+
+The `<code>` element in HTML is used to define a piece of computer code. It is typically used for displaying code snippets within a web page's content.
+
+## Syntax
+
+Here's the basic syntax of the `<code>` element:
+
+```html
+<code> Your code here </code>
+```
+
+You simply enclose your code within the opening `<code>` tag and the closing `</code>` tag.
+
+## Attributes
+
+The `<code>` element doesn't have many specific attributes of its own. However, it can accept global attributes such as:
+
+- `class`: To apply [**CSS**](/css) styles or JavaScript functions to the code block.
+- `id`: To uniquely identify the code block.
+- `style`: For inline [**CSS**](/css) styling.
+- `title`: To provide additional information about the code block (tooltip).
+- `data-*`: Custom data attributes for storing extra information.
+
+Here's an example of how to use some of these attributes:
+
+```html
+<code
+  class="highlighted"
+  id="myCode"
+  style="font-size: 14px;"
+  title="Important code"
+>
+  // Your code here
+</code>
+```
+
+## Example
+
+### Example 1
+
+```html
+<p>Here's a simple JavaScript function:</p>
+<code> function sayHello() { console.log("Hello, World!"); } </code>
+```
+
+**Output:**
+
+export const CodeExample1 = () => (
+  <div>
+    <p>Here's a simple JavaScript function:</p>
+    <code>
+      function sayHello() &#123;
+      <br />
+      &nbsp;&nbsp;console.log("Hello, World!");
+      <br />
+      &#125;
+    </code>
+  </div>
+);
+
+<CodeExample1 />
+
+### Example 2
+
+```html
+<p>Here's a simple HTML code snippet:</p>
+<code>
+  &lt;div class="container"&gt;
+  <br />
+  &nbsp;&nbsp;&lt;h1&gt;Hello, World!&lt;/h1&gt;
+  <br />
+  &lt;/div&gt;
+</code>
+```
+
+**Output:**
+
+export const CodeExample2 = () => (
+  <div>
+    <p>Here's a simple HTML code snippet:</p>
+    <code>
+      &lt;div class="container"&gt;
+      <br />
+      &nbsp;&nbsp;&lt;h1&gt;Hello, World!&lt;/h1&gt;
+      <br />
+      &lt;/div&gt;
+    </code>
+  </div>
+);
+
+<CodeExample2 />
+
+## Best Practices
+
+When using the `<code>` element, consider the following best practices:
+
+- **Use it sparingly:** Only use `<code>` for actual code snippets; don't use it for plain text that resembles code.
+- **Escape HTML entities:** If you want to display code containing HTML tags, use HTML entities (`&lt;` and `&gt;`) to prevent rendering.
+- **Provide context:** Surround your `<code>` element with appropriate text or headings to give context to the code.
+
+## Advanced Features
+
+The `<code>` element is often used in combination with other elements like `<pre>` for displaying code with whitespace preservation, and `<span>` for inline code highlighting. Here's an advanced example:
+
+```html
+<pre>
+   <code class="python">
+      def factorial(n):
+          if n == 0:
+              return 1
+          else:
+              return n * factorial(n-1)
+   </code>
+</pre>
+```
+
+**Output:**
+
+export const CodeExample3 = () => (
+  <pre>
+    <code className="python">
+      def factorial(n):
+      <br />
+      &nbsp;&nbsp;if n == 0:
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;return 1<br />
+      &nbsp;&nbsp;else:
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;return n * factorial(n-1)
+    </code>
+  </pre>
+);
+
+<CodeExample3 />
+
+In this example, we use `<pre>` to preserve line breaks and indentation and `<code>` with a class for language highlighting.
+
+That's a comprehensive overview of the `<code>` element in HTML. It's a versatile tool for displaying code snippets in web content while maintaining proper formatting and semantics.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .code-container {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        code {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Understanding a JavaScript Function</h1>
+
+    <p>In this example, we will explain and highlight a JavaScript function that calculates the factorial of a number.</p>
+
+    <div class="code-container">
+        <p>Here is the JavaScript function:</p>
+        <code>
+
+function factorial(n) {
+if (n === 0) {
+return 1;
+} else {
+return n \* factorial(n - 1);
+}
+}
+</code>
+</div>
+
+    <p>Explanation:</p>
+    <ul>
+        <li>The <code>factorial</code> function takes a single argument <code>n</code> which represents the number for which we want to calculate the factorial.</li>
+        <li>Inside the function, there is a recursive call to <code>factorial</code> itself, which calculates the factorial by multiplying <code>n</code> with the factorial of <code>n - 1</code>.</li>
+        <li>The base case checks if <code>n</code> is equal to 0 and returns 1. This is necessary to stop the recursion.</li>
+    </ul>
+
+    <p>Usage:</p>
+    <div class="code-container">
+        <code>
+
+const result = factorial(5);
+console.log("Factorial of 5 is:", result);
+</code>
+</div>
+
+    <p>In this usage, we call the <code>factorial</code> function with the argument 5, and it will calculate the factorial of 5, which is then logged to the console.</p>
+
+</body>
+</html>`,
+  }}
+/>

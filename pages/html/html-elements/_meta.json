@@ -12,5 +12,6 @@
   "br": "<br>",
   "button": "<button>",
   "caption": "<caption>",
-  "cite": "<cite>"
+  "cite": "<cite>",
+  "code": "<code>"
 }
