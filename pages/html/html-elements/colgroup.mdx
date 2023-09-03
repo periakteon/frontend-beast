@@ -1,0 +1,208 @@
+---
+title: <colgroup> Element - Introduction to HTML
+description: Learn about the HTML <colgroup> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - colgroup&desc=Learn about the colgroup element, its syntax, attributes, best practices."
+---
+
+import * as React from "react";
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<colgroup>`
+
+The `<colgroup>` element in HTML is used to group a set of `<col>` elements that represent column properties for an HTML table.
+
+## Syntax
+
+Here's the basic syntax of the `<colgroup>` element:
+
+```html
+<colgroup>
+  <!-- col elements -->
+</colgroup>
+```
+
+The `<colgroup>` element acts as a **container** for one or more `<col>` elements.
+
+## Attributes
+
+### `span`
+
+This attribute specifies the number of columns that the `<colgroup>` element should span. It determines how many columns the properties defined "in the `<col>` elements within the group apply to.
+
+```html
+<table>
+  <colgroup span="2">
+    <col style="background-color: red;" />
+    <col style="background-color: yellow;" />
+  </colgroup>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>Doe</td>
+  </tr>
+</table>
+```
+
+**Output:**
+
+export const ColgroupExample = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
+
+return (
+<table>
+<colgroup span="2">
+<col style={{ backgroundColor: "red" }} />
+<col style={{ backgroundColor: "yellow" }} />
+</colgroup>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+</tr>
+<tr>
+<td>John</td>
+<td>Doe</td>
+</tr>
+<tr>
+<td>Jane</td>
+<td>Doe</td>
+</tr>
+</table>
+);
+};
+
+<ColgroupExample />
+
+## Example
+
+### Basic Example
+
+```html
+<table>
+  <colgroup>
+    <col style="background-color: red;" />
+    <col style="background-color: yellow;" />
+  </colgroup>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>Doe</td>
+  </tr>
+</table>
+```
+
+## Best Practices
+
+- Use `<colgroup>` when you need to apply common column properties to multiple columns within a table.
+- Specify a width for columns if needed to control the layout.
+- Use semantic HTML elements where possible instead of applying styles directly in `<col>` elements.
+
+## Advanced Features
+
+- **Responsive Tables:** You can use media queries in [**CSS**](/css) to change the `<col>` element attributes (e.g., `width`) based on the screen size, making your tables more responsive.
+
+- **Styling Columns:** You can use [**CSS**](/css) to style columns differently within a `<colgroup>`. This is useful for highlighting specific columns or applying unique styles.
+
+- **Accessibility:** Ensure that your tables and column groups are accessible by providing appropriate ARIA attributes and labels for screen readers.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complex Colgroup Example</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    colgroup {
+      background-color: #f0f0f0;
+    }
+
+    colgroup .highlight {
+      background-color: #ffcc00;
+      font-weight: bold;
+    }
+
+    colgroup .accent {
+      background-color: #66ccff;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Complex Colgroup Example</h1>
+  <table>
+    <colgroup>
+      <col width="20%">
+      <col width="15%" class="highlight">
+      <col width="25%">
+      <col width="40%" class="accent">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+        <td>Data 3</td>
+        <td>Data 4</td>
+      </tr>
+      <tr>
+        <td>Data 5</td>
+        <td>Data 6</td>
+        <td>Data 7</td>
+        <td>Data 8</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>`,
+  }}
+/>

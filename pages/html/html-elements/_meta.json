@@ -14,5 +14,6 @@
   "caption": "<caption>",
   "cite": "<cite>",
   "code": "<code>",
-  "col": "<col>"
+  "col": "<col>",
+  "colgroup": "<colgroup>"
 }
