@@ -1,0 +1,167 @@
+---
+title: <caption> Element - Introduction to HTML
+description: Learn about the HTML <caption> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - caption&desc=Learn about the caption element, its syntax, attributes, best practices."
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<caption>`
+
+The `<caption>` element in HTML is used to provide a title or a caption for a table. It must be placed as the first child of the [**`<table>`**](/html/html-elements/table) element, directly following the opening [**`<table>`**](/html/html-elements/table) tag.
+
+## Syntax
+
+Here's the basic syntax of the `<caption>` element:
+
+```html
+<table>
+  <caption>
+    Table Caption
+  </caption>
+  <!-- Table Content -->
+</table>
+```
+
+**Output:**
+
+<table>
+  <caption>Table Caption</caption>
+</table>
+
+## Attributes
+
+The `<caption>` element doesn't have any specific attributes of its own. However, it can inherit global attributes such as `class`, `id`, `style`, and `aria-*` attributes, which can be used for styling and accessibility purposes.
+
+## Example
+
+### Simple Table with Caption
+
+```html
+<table>
+  <caption>
+    Table Caption
+  </caption>
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row 1, Column 1</td>
+      <td>Row 1, Column 2</td>
+    </tr>
+    <tr>
+      <td>Row 2, Column 1</td>
+      <td>Row 2, Column 2</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+**Output:**
+
+<table>
+  <caption>Table Caption</caption>
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row 1, Column 1</td>
+      <td>Row 1, Column 2</td>
+    </tr>
+    <tr>
+      <td>Row 2, Column 1</td>
+      <td>Row 2, Column 2</td>
+    </tr>
+  </tbody>
+</table>
+
+## Best Practices
+
+- Use `<caption>` sparingly and only when it adds meaningful context to the table.
+- Keep captions concise and descriptive.
+- Ensure that the caption accurately describes the purpose or content of the table.
+- Style captions appropriately to make them visually distinguishable from table data.
+
+## Advanced Features
+
+While `<caption>` is relatively straightforward, advanced usages involve combining it with [**CSS**](/css) and other elements to create complex table layouts and designs. For example:
+
+- [**`<caption>`**](/html/html-elements/caption) can be styled using [**CSS**](/css) to make it visually distinct from the rest of the table.
+- [**`<caption>`**](/html/html-elements/caption) can be combined with [**`<colgroup>`**](/html/html-elements/colgroup) and [**`<col>`**](/html/html-elements/col) to create complex table layouts.
+- [**`<caption>`**](/html/html-elements/caption) can be combined with [**`<thead>`**](/html/html-elements/thead), [**`<tbody>`**](/html/html-elements/tbody), and [**`<tfoot>`**](/html/html-elements/tfoot) to create complex table designs.
+- Creating responsive tables with media queries and captions that adapt to different screen sizes.
+
+Here's an example of using CSS to style the caption differently:
+
+```html
+<style>
+  caption {
+    font-weight: bold;
+    background-color: #f2f2f2;
+    padding: 8px;
+  }
+</style>
+
+<table>
+  <caption>
+    Styled Table Caption
+  </caption>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jane Smith</td>
+    <td>25</td>
+  </tr>
+</table>
+```
+
+This guide covers the `<caption>` element in HTML, its syntax, attributes, examples, best practices, and advanced usages.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>'b' Example</title>
+    <style>
+  caption {
+    font-weight: bold;
+    background-color: #f2f2f2;
+    padding: 8px;
+  }
+</style>
+</head>
+<body>
+    <table>
+  <caption>Styled Table Caption</caption>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jane Smith</td>
+    <td>25</td>
+  </tr>
+</table>
+</body>
+</html>`,
+  }}
+/>

@@ -10,5 +10,6 @@
   "blockquote": "<blockquote>",
   "body": "<body>",
   "br": "<br>",
-  "button": "<button>"
+  "button": "<button>",
+  "caption": "<caption>"
 }
