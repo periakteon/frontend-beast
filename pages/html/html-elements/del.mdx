@@ -5,6 +5,7 @@ date: 2023-09-02
 image: "https://frontendbeast.com/api/og?title=HTML Element - del&desc=Learn about the del element, its syntax, attributes, best practices."
 ---
 
+import * as React from "react";
 import { Callout } from "nextra-theme-docs";
 import { Sandpack } from "@codesandbox/sandpack-react";
 import { atomDark } from "@codesandbox/sandpack-themes";
@@ -73,9 +74,23 @@ The `datetime` attribute specifies the date and time when the change was made. I
 
 **Output:**
 
+export const BasicUsage = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null
+
+return (
+
 <p>
   This is a <del>deleted</del> word.
 </p>
+)};
+
+<BasicUsage />
 
 ### With `cite` Attribute
 
@@ -85,13 +100,23 @@ The `datetime` attribute specifies the date and time when the change was made. I
 
 **Output:**
 
+export const DelWithCite = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null
+
+return (
+
 <p>
   This is a <del cite="https://www.example.com">deleted</del> word.
 </p>
+)};
 
----
-
-""
+<DelWithCite />
 
 ### With `datetime` Attribute
 
@@ -101,9 +126,21 @@ The `datetime` attribute specifies the date and time when the change was made. I
 
 **Output:**
 
+export const DelWithDateTime = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null
+
+return (
+
 <p>
-  This is a <del datetime="2023-09-02">deleted</del> word.
+  This is a<del datetime="2023-09-02">deleted</del> word.
 </p>
+)};
 
 ---
 
@@ -118,13 +155,27 @@ The `datetime` attribute specifies the date and time when the change was made. I
 
 **Output:**
 
+export const DelWithCiteAndDateTime = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null
+
+return (
+
 <p>
-  This is a{" "}
+  This is a
   <del cite="https://www.example.com" datetime="2023-09-02">
     deleted
   </del>{" "}
   word.
 </p>
+)};
+
+<DelWithCiteAndDateTime />
 
 ## Best Practices
 
