@@ -1,0 +1,198 @@
+---
+title: <details> Element - Introduction to HTML
+description: Learn about the HTML <details> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - details&desc=Learn about the details element, its syntax, attributes, best practices."
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<details>`
+
+The `<details>` element in HTML is used to create a disclosure widget that can be toggled open or closed to reveal or hide additional content.
+
+## Syntax
+
+Here's the basic syntax of the `<details>` element:
+
+```html showLineNumbers /details/
+<details>
+  <summary>Summary Text</summary>
+  <!-- Content to be revealed or hidden goes here -->
+</details>
+```
+
+**Output:**
+
+<details>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+</details>
+
+- **`<details>`:** This is the container element that wraps the disclosure widget.
+- **`<summary>`:** Inside the `<details>` element, you place a `<summary>` element that provides a brief title or label for the disclosure widget.
+- **Content:** Any content placed within the `<details>` element will be revealed or hidden when the widget is toggled.
+
+## Attributes
+
+The `<details>` element supports the following attributes:
+
+### `open`
+
+The `open` attribute is a boolean attribute that, when present, indicates that the disclosure widget should be open by default.
+
+```html showLineNumbers /open/
+<details open>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+</details>
+```
+
+**Output:**
+
+<details open>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+</details>
+
+## Example
+
+### Basic Usage
+
+```html showLineNumbers
+<details>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+</details>
+```
+
+**Output:**
+
+<details>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+</details>
+
+---
+
+### With `open` Attribute
+
+```html showLineNumbers
+<details open>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+</details>
+```
+
+**Output:**
+
+<details open>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+</details>
+
+## Best Practices
+
+- Use `<summary>` to provide a clear and concise label for the disclosure widget.
+- Ensure that the content inside the `<details>` element is relevant to the summary.
+- Provide an alternative display for browsers that don't support the `<details>` element by placing essential content outside the element.
+
+## Advanced Features
+
+### Nesting
+
+You can nest `<details>` elements inside each other to create a hierarchical disclosure widget.
+
+```html showLineNumbers
+<details>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+  <details>
+    <summary>Summary Text</summary>
+    Content to be revealed or hidden goes here
+  </details>
+</details>
+```
+
+**Output:**
+
+<details>
+  <summary>Summary Text</summary>
+  Content to be revealed or hidden goes here
+  <details>
+    <summary>Summary Text</summary>
+    Content to be revealed or hidden goes here
+  </details>
+</details>
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complex Details Example</title>
+  <style>
+    /* Style the summary text */
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Style the details container */
+    details {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+
+    /* Change the disclosure triangle icon color */
+    summary::-webkit-details-marker {
+      color: #007bff;
+    }
+
+    /* Style the nested details container */
+    details details {
+      border: 1px dashed #e91e63;
+      padding: 8px;
+      margin-top: 8px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Complex Details Example</h1>
+
+{" "}
+<details>
+  <summary>Section 1</summary>
+  <p>This is the content for Section 1.</p>
+
+  <details>
+    <summary>Subsection 1.1</summary>
+    <p>This is the content for Subsection 1.1.</p>
+  </details>
+
+  <details>
+    <summary>Subsection 1.2</summary>
+    <p>This is the content for Subsection 1.2.</p>
+  </details>
+</details>
+
+  <details>
+    <summary>Section 2</summary>
+    <p>This is the content for Section 2.</p>
+  </details>
+</body>
+</html>`,
+  }}
+/>

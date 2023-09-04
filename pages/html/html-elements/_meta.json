@@ -16,5 +16,6 @@
   "code": "<code>",
   "col": "<col>",
   "colgroup": "<colgroup>",
-  "del": "<del>"
+  "del": "<del>",
+  "details": "<details>"
 }
