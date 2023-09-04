@@ -45,9 +45,12 @@ const config = {
           <Link target="_blank" href="https://twitter.com/frontendbeast_">
             🐦 Follow on Twitter →
           </Link>
-          {/* <Link target="_blank" href="https://dahliaos.io/donate">
+          <Link
+            target="_blank"
+            href="https://opencollective.com/frontend-beast"
+          >
             💝 Support The FE Beast →
-          </Link> */}
+          </Link>
         </>
       );
     },

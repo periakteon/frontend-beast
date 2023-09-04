@@ -4,15 +4,15 @@
   "css": "💅🏽 CSS",
   "faq": "F.A.Q.",
   "website": {
-    "title": "Home ↗",
-    "type": "page",
-    "href": "https://frontendbeast.com",
-    "newWindow": false
-  },
-  "twitter": {
     "title": "Twitter ↗",
     "type": "page",
     "href": "https://twitter.com/frontendbeast_",
+    "newWindow": false
+  },
+  "twitter": {
+    "title": "Support Us ↗",
+    "type": "page",
+    "href": "https://opencollective.com/frontend-beast",
     "newWindow": true
   }
 }
