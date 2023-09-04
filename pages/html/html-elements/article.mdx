@@ -22,7 +22,7 @@ The `<article>` element in HTML is used to define a self-contained piece of cont
 
 Here's the basic syntax of the `<article>` element:
 
-```html
+```html showLineNumbers /article/
 <article>
   <!-- Content goes here -->
 </article>
@@ -32,7 +32,7 @@ Now, let's dive into some examples to illustrate its usage:
 
 ## Example 1: News Article
 
-```html
+```html showLineNumbers /article/
 <article>
   <h1>Breaking News: New Discovery on Mars</h1>
   <p>
@@ -43,9 +43,24 @@ Now, let's dive into some examples to illustrate its usage:
 </article>
 ```
 
+**Output:**
+
+<article>
+  <h1>Breaking News: New Discovery on Mars</h1>
+  <p>
+    Scientists have found evidence of water on the surface of Mars, indicating
+    the possibility of life.
+  </p>
+  <p>
+    Published on: <time datetime="2023-09-01">September 1, 2023</time>
+  </p>
+</article>
+
+---
+
 ## Example 2: Blog Post
 
-```html
+```html showLineNumbers /article/
 <article>
   <h1>Top 10 Web Development Frameworks</h1>
   <p>
@@ -57,9 +72,25 @@ Now, let's dive into some examples to illustrate its usage:
 </article>
 ```
 
+**Output:**
+
+<article>
+  <h1>Top 10 Web Development Frameworks</h1>
+  <p>
+    If you're a web developer, you need to know about these popular
+    frameworks...
+  </p>
+  <p>Written by: John Doe</p>
+  <p>
+    Published on: <time datetime="2023-08-15">August 15, 2023</time>
+  </p>
+</article>
+
+---
+
 ## Example 3: Forum Post
 
-```html
+```html showLineNumbers /article/
 <article>
   <h2>Discussion: JavaScript vs. TypeScript</h2>
   <p>
@@ -71,9 +102,25 @@ Now, let's dive into some examples to illustrate its usage:
 </article>
 ```
 
+**Output:**
+
+<article>
+  <h2>Discussion: JavaScript vs. TypeScript</h2>
+  <p>
+    What are the pros and cons of using TypeScript in a JavaScript project?
+    Let's discuss...
+  </p>
+  <p>Posted by: JaneSmith123</p>
+  <p>
+    Posted on: <time datetime="2023-07-20">July 20, 2023</time>
+  </p>
+</article>
+
+---
+
 ## Example 4: Comment
 
-```html
+```html showLineNumbers /article/1,3
 <article>
   <p>Great article! I learned a lot from it.</p>
   <p>Posted by: John Doe</p>
@@ -81,9 +128,21 @@ Now, let's dive into some examples to illustrate its usage:
 </article>
 ```
 
+**Output:**
+
+<article>
+  <p>Great article! I learned a lot from it.</p>
+  <p>Posted by: John Doe</p>
+  <p>
+    Posted on: <time datetime="2023-06-10">June 10, 2023</time>
+  </p>
+</article>
+
+---
+
 ## Example 5: Product Review
 
-```html
+```html showLineNumbers /article/
 <article>
   <h1>Product Review: iPhone 20</h1>
   <p>Here's my review of the new iPhone 20...</p>
@@ -92,9 +151,22 @@ Now, let's dive into some examples to illustrate its usage:
 </article>
 ```
 
+**Output:**
+
+<article>
+  <h1>Product Review: iPhone 20</h1>
+  <p>Here's my review of the new iPhone 20...</p>
+  <p>Written by: John Doe</p>
+  <p>
+    Published on: <time datetime="2023-05-05">May 5, 2023</time>
+  </p>
+</article>
+
+---
+
 ## Example 6: Recipe
 
-```html
+```html showLineNumbers /article/
 <article>
   <h1>Recipe: Chocolate Chip Cookies</h1>
   <p>Here's how to make delicious chocolate chip cookies...</p>
@@ -103,9 +175,22 @@ Now, let's dive into some examples to illustrate its usage:
 </article>
 ```
 
+**Output:**
+
+<article>
+  <h1>Recipe: Chocolate Chip Cookies</h1>
+  <p>Here's how to make delicious chocolate chip cookies...</p>
+  <p>Written by: Jane Smith</p>
+  <p>
+    Published on: <time datetime="2023-04-01">April 1, 2023</time>
+  </p>
+</article>
+
+---
+
 ## Example 7: Book Review
 
-```html
+```html showLineNumbers /article/
 <article>
   <h1>Book Review: The Alchemist</h1>
   <p>Here's my review of the book "The Alchemist" by Paulo Coelho...</p>
@@ -114,9 +199,22 @@ Now, let's dive into some examples to illustrate its usage:
 </article>
 ```
 
+**Output:**
+
+<article>
+  <h1>Book Review: The Alchemist</h1>
+  <p>Here's my review of the book "The Alchemist" by Paulo Coelho...</p>
+  <p>Written by: John Doe</p>
+  <p>
+    Published on: <time datetime="2023-03-01">March 1, 2023</time>
+  </p>
+</article>
+
+---
+
 ## Example 8: Video Game Review
 
-```html
+```html showLineNumbers /article/
 <article>
   <h1>Video Game Review: Cyberpunk 2077</h1>
   <p>Here's my review of the video game "Cyberpunk 2077"...</p>
@@ -125,9 +223,22 @@ Now, let's dive into some examples to illustrate its usage:
 </article>
 ```
 
+**Output:**
+
+<article>
+  <h1>Video Game Review: Cyberpunk 2077</h1>
+  <p>Here's my review of the video game "Cyberpunk 2077"...</p>
+  <p>Written by: Jane Smith</p>
+  <p>
+    Published on: <time datetime="2023-02-01">February 1, 2023</time>
+  </p>
+</article>
+
+---
+
 ## Example 9: Movie Review
 
-```html
+```html showLineNumbers /article/
 <article>
   <h1>Movie Review: The Matrix</h1>
   <p>Here's my review of the movie "The Matrix"...</p>
@@ -135,6 +246,17 @@ Now, let's dive into some examples to illustrate its usage:
   <p>Published on: <time datetime="2023-01-01">January 1, 2023</time></p>
 </article>
 ```
+
+**Output:**
+
+<article>
+  <h1>Movie Review: The Matrix</h1>
+  <p>Here's my review of the movie "The Matrix"...</p>
+  <p>Written by: John Doe</p>
+  <p>
+    Published on: <time datetime="2023-01-01">January 1, 2023</time>
+  </p>
+</article>
 
 ## Best Practices
 

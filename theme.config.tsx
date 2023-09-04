@@ -88,7 +88,7 @@ const config = {
   editLink: {
     text: null,
   },
-  gitTimestamp: true,
+  // gitTimestamp: true,
   logo: () => {
     const isDark = useDark();
     return (

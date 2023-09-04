@@ -16,9 +16,9 @@ The `<br>` element, also known as the **line break** element, is used to insert 
 
 ## Syntax
 
-Its syntax is straightforward and consists of a single, **self-closing** tag:
+Its syntax is straightforward and consists of a single, **self-closing** tag, meaning it has no closing tag:
 
-```html
+```html showLineNumbers /br/
 <br />
 ```
 
@@ -38,7 +38,7 @@ The `clear` attribute specifies how the line break should behave in relation to 
 
 ### Basic Example
 
-```html {2}
+```html showLineNumbers {2}
 <p>
   This is a <br />
   line break.
@@ -57,9 +57,11 @@ export const BasicExample = () => {
 
 <BasicExample />
 
+---
+
 ### Clearing Floating Elements
 
-```html {1}
+```html showLineNumbers {1}
 This is some text that clears to the left.<br clear="left" />
 This is text that wraps around the line break.
 ```
@@ -95,7 +97,7 @@ While `<br>` is a simple element, it can be creatively used in more advanced sce
 
 You can use CSS in conjunction with `<br>` to achieve custom line spacing for text.
 
-```html {2}
+```html showLineNumbers {2}
 <p>This is some text.</p>
 <p style="line-height: 2em;">This text has increased line spacing.<br /></p>
 <p>Back to normal spacing.</p>
@@ -118,17 +120,19 @@ export const CustomLineSpacing = () => {
 
 <CustomLineSpacing />
 
+---
+
 ### Hidden Line Breaks
 
 You can use [**CSS**](/css) to hide line breaks in specific situations or screen sizes, providing responsive design.
 
-```html filename="index.html" {2}
+```html showLineNumbers filename="index.html" {2}
 <p>This is some text.</p>
 <p class="hide-line-break">This text will wrap without a line break.<br /></p>
 <p>Normal flow.</p>
 ```
 
-```css filename="styles.css"
+```css showLineNumbers filename="styles.css"
 @media (max-width: 600px) {
   .hide-line-break {
     display: none;

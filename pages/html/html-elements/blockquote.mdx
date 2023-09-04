@@ -18,7 +18,7 @@ The `<blockquote>` element in HTML is used to indicate that the enclosed text is
 
 Here's the basic syntax of the `<blockquote>` element:
 
-```html
+```html showLineNumbers /blockquote/
 <blockquote>Quoted text goes here.</blockquote>
 ```
 
@@ -34,7 +34,7 @@ The `<blockquote>` element supports the following attributes:
 
 The `cite` attribute specifies the source of the quotation. It can be a URL or a string literal.
 
-```html
+```html showLineNumbers /cite/
 <blockquote cite="https://www.example.com">Quoted text goes here.</blockquote>
 ```
 
@@ -42,7 +42,7 @@ The `cite` attribute specifies the source of the quotation. It can be a URL or a
 
 The `lang` attribute specifies the language of the quotation. It is used to indicate the language of the quotation in case it is different from the language of the rest of the document.
 
-```html
+```html showLineNumbers /lang/
 <blockquote lang="en">Quoted text goes here.</blockquote>
 ```
 
@@ -50,7 +50,7 @@ The `lang` attribute specifies the language of the quotation. It is used to indi
 
 The `dir` attribute specifies the direction of the quotation. It can be either `ltr` (left-to-right) or `rtl` (right-to-left).
 
-```html
+```html showLineNumbers /dir/
 <blockquote dir="rtl">Quoted text goes here.</blockquote>
 ```
 
@@ -62,7 +62,7 @@ The `dir` attribute specifies the direction of the quotation. It can be either `
 
 The `title` attribute specifies the title of the quotation. It is used to provide additional information about the quotation.
 
-```html
+```html showLineNumbers /title/
 <blockquote title="Quote by John Doe">Quoted text goes here.</blockquote>
 ```
 
@@ -74,7 +74,7 @@ The `title` attribute specifies the title of the quotation. It is used to provid
 
 The `class` attribute is used to specify one or more class names for an element. It is used to associate the element with a particular style rule.
 
-```html
+```html showLineNumbers /class/
 <blockquote class="quote">Quoted text goes here.</blockquote>
 ```
 
@@ -102,7 +102,7 @@ export const StyledBlockquote = () => {
 
 The `id` attribute is used to specify a unique id for an element. It is used to identify the element when linking using a fragment identifier.
 
-```html
+```html showLineNumbers /id/
 <blockquote id="quote">Quoted text goes here.</blockquote>
 ```
 
@@ -131,7 +131,7 @@ export const StyledIdBlockquote = () => {
 
 ### Basic Example
 
-```html
+```html showLineNumbers
 <blockquote>The only way to do great work is to love what you do.</blockquote>
 ```
 
@@ -141,7 +141,7 @@ export const StyledIdBlockquote = () => {
 
 ### With a Source Reference:
 
-```html
+```html showLineNumbers /cite/
 <blockquote cite="https://www.brainyquote.com/quotes/steve_jobs_416859">
   The only way to do great work is to love what you do.
 </blockquote>
@@ -166,7 +166,7 @@ export const StyledIdBlockquote = () => {
 
 You can nest blockquotes inside other blockquotes to indicate that the enclosed text is a quotation within a quotation.
 
-```html
+```html showLineNumbers /blockquote/3-6
 <!DOCTYPE html>
 <html lang="en">
   <head>

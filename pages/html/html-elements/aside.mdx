@@ -18,7 +18,7 @@ The `<aside>` element is used to define content that is tangentially related to 
 
 Here's the basic syntax of the `<aside>` element:
 
-```html
+```html showLineNumbers /aside/1,3
 <aside>
   <!-- Your aside content goes here -->
 </aside>
@@ -32,7 +32,7 @@ The `<aside>` element can have the following attributes:
 
 The `class` attribute is used to add a class to the `<aside>` element, which you can use to style it with [**CSS**](/css).
 
-```html
+```html showLineNumbers /class/
 <aside class="sidebar">
   <!-- Your aside content goes here -->
 </aside>
@@ -42,7 +42,7 @@ The `class` attribute is used to add a class to the `<aside>` element, which you
 
 The `id` attribute is used to add an ID to the `<aside>` element, which you can use to style it with [**CSS**](/css) or target it with [**JavaScript**](/javascript).
 
-```html
+```html showLineNumbers /id/2
 <aside id="sidebar">
   <!-- Your aside content goes here -->
 </aside>
@@ -52,7 +52,7 @@ The `id` attribute is used to add an ID to the `<aside>` element, which you can 
 
 The `style` attribute is used to add inline [**CSS**](/css) styles to the `<aside>` element.
 
-```html
+```html showLineNumbers /style/
 <aside
   style="background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc; margin: 10px;"
 >
@@ -64,7 +64,7 @@ The `style` attribute is used to add inline [**CSS**](/css) styles to the `<asid
 
 The `title` attribute is used to add a title to the `<aside>` element, which is displayed as a tooltip when the user hovers over the element.
 
-```html
+```html showLineNumbers /title/1
 <aside title="This is the title of the aside element">
   <!-- Your aside content goes here -->
 </aside>
@@ -74,7 +74,7 @@ The `title` attribute is used to add a title to the `<aside>` element, which is 
 
 The `lang` attribute is used to specify the language of the content inside the `<aside>` element.
 
-```html
+```html showLineNumbers /lang/
 <aside lang="en">
   <!-- Your aside content goes here -->
 </aside>
@@ -84,7 +84,7 @@ The `lang` attribute is used to specify the language of the content inside the `
 
 The `dir` attribute defines the text direction (**left-to-right** (`ltr`) or **right-to-left** (`rtl`) ) for the content within the element.
 
-```html
+```html showLineNumbers /dir/
 <aside dir="rtl">
   <!-- Your aside content goes here -->
 </aside>
@@ -94,17 +94,17 @@ The `dir` attribute defines the text direction (**left-to-right** (`ltr`) or **r
 
 The `tabindex` attribute specifies the tab order of the element. It's typically used to make elements focusable.
 
-```html
+```html showLineNumbers /tabindex/
 <aside tabindex="0">
   <!-- Your aside content goes here -->
 </aside>
 ```
 
-### Example
+## Example
 
 The below example shows how you can use the `<aside>` element with these attributes:
 
-```html
+```html showLineNumbers
 <aside
   class="sidebar"
   id="important-info"
@@ -118,13 +118,33 @@ The below example shows how you can use the `<aside>` element with these attribu
 </aside>
 ```
 
+**Output:**
+
+export const AsideComponent = () => {
+  return (
+    <aside
+      className="sidebar"
+      id="important-info"
+      style={{ backgroundColor: "#f0f0f0" }}
+      title="Additional Information"
+      lang="en"
+      dir="ltr"
+      tabIndex="1"
+    >
+      Aside with attributes!
+    </aside>
+  );
+};
+
+<AsideComponent />
+
 ## Real World Scenario Example
 
 Let's say you're writing a blog post about a new JavaScript library you've been working on. You want to include a sidebar with a link to the GitHub repository for the library, as well as a link to the documentation. You also want to include a link to your personal website, where you have a blog post about the library.
 
 Here's how you could use the `<aside>` element to accomplish this:
 
-```html
+```html showLineNumbers /aside/
 <article>
   <h1>My New JavaScript Library</h1>
   <p>(content of blog post)</p>
@@ -145,7 +165,7 @@ You can style the `<aside>` element using [**CSS**](/css), and it can also have 
 
 Here are some examples of how you could style the `<aside>` element:
 
-```css
+```css showLineNumbers
 aside {
   background-color: #f0f0f0;
   padding: 10px;

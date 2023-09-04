@@ -18,7 +18,7 @@ The `<cite>` element in HTML is used to mark up the title of a creative work, su
 
 Its syntax is quite straightforward:
 
-```html
+```html showLineNumbers /cite/1,3
 <cite>Text to be cited</cite>
 ```
 
@@ -30,7 +30,7 @@ The `<cite>` element has a few attributes that can be used to provide additional
 
 The `title` attribute can be used to provide additional information about the cited work. It is displayed as a tooltip when the user hovers over the element.
 
-```html
+```html showLineNumbers /title/1
 <cite title="The title of the cited work">Text to be cited</cite>
 ```
 
@@ -44,7 +44,7 @@ _(Hover over the element to see the tooltip)_
 
 ### Basic Usage
 
-```html
+```html showLineNumbers /cite/
 <p>
   According to <cite>Shakespeare's Sonnet 18</cite>, "Shall I compare thee to a
   summer's day?"
@@ -58,9 +58,11 @@ _(Hover over the element to see the tooltip)_
   summer's day?"
 </p>
 
+---
+
 ### With `title` Attribute
 
-```html
+```html showLineNumbers /title/
 <p>
   According to <cite title="Shakespeare's Sonnet 18">Sonnet 18</cite>, "Shall I
   compare thee to a summer's day?"
@@ -92,7 +94,7 @@ While `<cite>` is primarily used for citing titles, you can get creative with it
 
 You can use multiple `<cite>` elements for citing multiple works in a single sentence.
 
-```html
+```html showLineNumbers /cite/
 <p>
   According to <cite>Shakespeare's Sonnet 18</cite> and
   <cite>Keats' Ode to a Nightingale</cite>,...
@@ -106,11 +108,13 @@ You can use multiple `<cite>` elements for citing multiple works in a single sen
   <cite>Keats' Ode to a Nightingale</cite>,...
 </p>
 
+---
+
 ### Advanced Usage 2: Styling
 
 You can style the `<cite>` element using [**CSS**](/css) to match your design requirements.
 
-```html
+```html showLineNumbers /cite/2,3
 <style>
   cite {
     font-style: italic;

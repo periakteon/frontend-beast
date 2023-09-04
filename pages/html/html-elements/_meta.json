@@ -15,5 +15,6 @@
   "cite": "<cite>",
   "code": "<code>",
   "col": "<col>",
-  "colgroup": "<colgroup>"
+  "colgroup": "<colgroup>",
+  "del": "<del>"
 }

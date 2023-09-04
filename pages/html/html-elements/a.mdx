@@ -18,7 +18,7 @@ The `<a>` element is used to create **hyperlinks**. It is also known as **the an
 
 The most common use of the `<a>` element is to create a basic hyperlink to another web page. You specify the target URL using the `href` attribute.
 
-```html
+```html showLineNumbers /a/1,4
 <a href="https://frontendbeast.com">Frontend Beast</a>
 ```
 
@@ -28,7 +28,7 @@ In this example, the text "Frontend Beast" is the link text, and the URL "https:
 
 You can also use the `<a>` element to create a link to an email address. You can do this by specifying the email address in the `href` attribute, and prefixing it with `mailto:`.
 
-```html
+```html showLineNumbers /href/
 <a href="mailto:contact@example.com">Send an Email</a>
 ```
 
@@ -38,7 +38,7 @@ In the example above, clicking this link will open the user's email client with 
 
 Similarly, you can create links that initiate phone calls on mobile devices with the `tel` attribute.
 
-```html
+```html showLineNumbers /href/
 <a href="tel:+1234567890">Call Us</a>
 ```
 
@@ -48,7 +48,7 @@ Clicking this link on a mobile device will prompt the user to make a call to the
 
 You can also use the `<a>` element to create links to files. You can do this by specifying the file path in the `href` attribute. So, you can link to local files on the user's device using relative or absolute file paths.
 
-```html
+```html showLineNumbers /href/
 <a href="documents/sample.pdf">Download PDF</a>
 ```
 
@@ -58,13 +58,13 @@ This link would allow users to download a PDF file named `sample.pdf` located in
 
 You can also use the `<a>` element to create links to different sections of the same web page. These are also known as **anchor links** or **internal links**. You can do this by specifying the `id` attribute on the target element, and then using the `href` attribute to link to it. This is useful for creating table of contents or navigating to specific sections on a long page.
 
-```html
+```html showLineNumbers /href/
 <a href="#section2">Go to Section 2</a>
 ```
 
 To use this, you'd need to have an element with the `id` attribute set to `section2` elsewhere on the page:
 
-```html
+```html showLineNumbers /id/
 <h2 id="section2">Section 2</h2>
 ```
 
@@ -74,10 +74,10 @@ Clicking the link will scroll the page to the `Section 2` content.
 
 You can also use the `<a>` element to create links to external resources such as images. You can do this by specifying the URL of the resource in the `href` attribute. This is useful for creating image galleries or linking to external resources.
 
-```html
-<a href="https://frontendbeast.com/images/favicon/android-chrome-512x512.png"
-  >View Logo</a
->
+```html showLineNumbers /href/
+<a href="https://frontendbeast.com/images/favicon/android-chrome-512x512.png">
+  View Logo
+</a>
 ```
 
 This link would open the image in the browser when clicked.
@@ -86,12 +86,13 @@ This link would open the image in the browser when clicked.
 
 You can add a title to the link using the `title` attribute. This is useful for providing additional information about the link to users. For example, you can use this to provide a description of the link, or to provide a warning about the link. It's a good practice to include a title attribute to provide additional information about the link, which can help with accessibility and SEO.
 
-```html
+```html showLineNumbers /title/
 <a
   href="https://frontendbeast.com"
   title="Frontend Beast - Learn Web Development"
-  >Frontend Beast</a
 >
+  Frontend Beast
+</a>
 ```
 
 Including a title attribute enhances the user experience, especially for screen readers.
@@ -104,7 +105,7 @@ By default, when a user clicks on a link, the browser will navigate to the targe
 
 Opens the target URL in the same tab.
 
-```html
+```html showLineNumbers /target/
 <a href="https://frontendbeast.com" target="_self">Frontend Beast</a>
 ```
 
@@ -114,7 +115,7 @@ In this example, the target URL will be opened in the same tab when the user cli
 
 Opens the target URL in a new tab.
 
-```html
+```html showLineNumbers /target/
 <a href="https://frontendbeast.com" target="_blank">Frontend Beast</a>
 ```
 
@@ -124,7 +125,7 @@ In this example, the target URL will be opened in a new tab when the user clicks
 
 Opens the target URL in the parent frame.
 
-```html
+```html showLineNumbers /target/
 <a href="https://frontendbeast.com" target="_parent">Frontend Beast</a>
 ```
 
@@ -134,7 +135,7 @@ In this example, the target URL will be opened in the parent frame when the user
 
 Opens the target URL in the full body of the window.
 
-```html
+```html showLineNumbers /target/
 <a href="https://frontendbeast.com" target="_top">Frontend Beast</a>
 ```
 

@@ -1,0 +1,192 @@
+---
+title: <del> Element - Introduction to HTML
+description: Learn about the HTML <del> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - del&desc=Learn about the del element, its syntax, attributes, best practices."
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<del>`
+
+The `<del>` element is used to represent deleted or removed text within a document. It is often used in conjunction with the `<ins>` element to represent changes to a document.
+
+## Syntax
+
+Here's the basic syntax of the `<del>` element:
+
+```html showLineNumbers /del/
+<del>Deleted text</del>
+```
+
+**Output:**
+
+<del>Deleted text</del>
+
+If we want to use it with the `<ins>` element, we can do it like this:
+
+```html showLineNumbers /ins/ {2}
+<del>Deleted text</del> <ins>Inserted text</ins>
+```
+
+**Output:**
+
+<del>Deleted text</del>
+<ins>Inserted text</ins>
+
+## Attributes
+
+### `cite`
+
+The `cite` attribute specifies the URL of the resource that explains the change. It is used to provide a reference to the source of the change.
+
+```html showLineNumbers /cite/
+<del cite="https://www.example.com">Deleted text</del>
+```
+
+**Output:**
+
+<del cite="https://www.example.com">Deleted text</del>
+
+### `datetime`
+
+The `datetime` attribute specifies the date and time when the change was made. It is used to provide a reference to the time of the change.
+
+```html showLineNumbers /datetime/
+<del datetime="2023-09-02">Deleted text</del>
+```
+
+**Output:**
+
+<del datetime="2023-09-02">Deleted text</del>
+
+## Example
+
+### Basic Usage
+
+```html showLineNumbers /del/1,3
+<p>This is a <del>deleted</del> word.</p>
+```
+
+**Output:**
+
+<p>
+  This is a <del>deleted</del> word.
+</p>
+
+### With `cite` Attribute
+
+```html showLineNumbers /cite/
+<p>This is a <del cite="https://www.example.com">deleted</del> word.</p>
+```
+
+**Output:**
+
+<p>
+  This is a <del cite="https://www.example.com">deleted</del> word.
+</p>
+
+---
+
+""
+
+### With `datetime` Attribute
+
+```html showLineNumbers /datetime/
+<p>This is a <del datetime="2023-09-02">deleted</del> word.</p>
+```
+
+**Output:**
+
+<p>
+  This is a <del datetime="2023-09-02">deleted</del> word.
+</p>
+
+---
+
+### With `cite` and `datetime` Attributes
+
+```html showLineNumbers /cite/ /datetime/
+<p>
+  This is a
+  <del cite="https://www.example.com" datetime="2023-09-02">deleted</del> word.
+</p>
+```
+
+**Output:**
+
+<p>
+  This is a{" "}
+  <del cite="https://www.example.com" datetime="2023-09-02">
+    deleted
+  </del>{" "}
+  word.
+</p>
+
+## Best Practices
+
+- Use the `<del>` element to indicate content that has been removed or deleted, providing a clearer understanding of the document's revision history.
+- Always use the `datetime` attribute to specify when the deletion occurred for improved context.
+- Provide a meaningful value for the `cite` attribute if possible, linking to the original source where the deletion took place.
+
+## Advanced Features
+
+Advanced usage of the `<del>` element may involve scripting or dynamic modifications of the document based on user interactions or server data. For example, you can use JavaScript to apply the `<del>` element to text that has been removed in a collaborative editing environment.
+
+This guild covers the `<del>` element in HTML, including its syntax, attributes, examples, best practices, and advanced usages.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex <del> Element Usage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        .revision-history {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .deleted {
+            text-decoration: line-through;
+            color: #ff0000; /* Red for deleted text */
+        }
+        
+        .added {
+            background-color: #c3ffc3; /* Light green for added text */
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Revision History</h1>
+    <div class="revision-history">
+        <p>This is the initial version of the document.</p>
+        <p>On <time datetime="2023-09-04T10:30:00">September 4, 2023, at 10:30 AM</time>, the following changes were made:</p>
+        <ul>
+            <li>Some text was <del class="deleted">removed</del> from the document.</li>
+            <li>Additional information was <ins class="added">added</ins> to the content.</li>
+        </ul>
+    </div>
+</body>
+</html>`,
+  }}
+/>

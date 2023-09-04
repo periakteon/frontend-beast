@@ -18,13 +18,13 @@ The `<audio>` element in HTML is used to embed audio content, such as music, sou
 
 Here's the basic syntax of the `<audio>` element:
 
-```html
+```html showLineNumbers
 <audio src="audio.mp3" controls></audio>
 ```
 
 Inside the `<audio>` element, you provide one or more `<source>` elements, each with a different audio format. The browser will select the first compatible format.
 
-```html {2-4}
+```html showLineNumbers {2-4}
 <audio controls>
   <source src="audio.mp3" type="audio/mpeg" />
   <source src="audio.ogg" type="audio/ogg" />
@@ -42,7 +42,7 @@ The `<audio>` element supports the following attributes:
 
 Specifies that the audio will start playing as soon as it is ready.
 
-```html
+```html showLineNumbers /autoplay/
 <audio autoplay>
   <!-- sources here -->
 </audio>
@@ -52,7 +52,7 @@ Specifies that the audio will start playing as soon as it is ready.
 
 Specifies that the audio will display controls (like play, pause, volume, etc.).
 
-```html
+```html showLineNumbers /controls/
 <audio controls>
   <!-- sources here -->
 </audio>
@@ -62,7 +62,7 @@ Specifies that the audio will display controls (like play, pause, volume, etc.).
 
 Specifies that the audio will start over again, every time it is finished.
 
-```html
+```html showLineNumbers /loop/
 <audio loop>
   <!-- sources here -->
 </audio>
@@ -72,7 +72,7 @@ Specifies that the audio will start over again, every time it is finished.
 
 Specifies that the audio output should be muted.
 
-```html
+```html showLineNumbers /muted/
 <audio muted>
   <!-- sources here -->
 </audio>
@@ -82,7 +82,7 @@ Specifies that the audio output should be muted.
 
 Specifies if and how the audio should be loaded when the page loads. Possible values are `none`, `metadata`, and `auto`.
 
-```html
+```html showLineNumbers /preload/
 <audio preload="auto">
   <!-- sources here -->
 </audio>
@@ -92,7 +92,7 @@ Specifies if and how the audio should be loaded when the page loads. Possible va
 
 Specifies the URL of the audio file.
 
-```html
+```html showLineNumbers /src/
 <audio src="audio.mp3">
   <!-- sources here -->
 </audio>
@@ -102,7 +102,7 @@ Specifies the URL of the audio file.
 
 Specifies the media type of the audio file. The value must be a valid [**MIME type**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types).
 
-```html
+```html showLineNumbers /type/
 <audio type="audio/mpeg">
   <!-- sources here -->
 </audio>
@@ -112,7 +112,7 @@ Specifies the media type of the audio file. The value must be a valid [**MIME ty
 
 Here's an example of the `<audio>` element in action:
 
-```html
+```html showLineNumbers
 <audio controls>
   <source src="music.mp3" type="audio/mpeg" />
   <source src="music.ogg" type="audio/ogg" />
@@ -142,7 +142,7 @@ Use text within the `<audio>` element to provide a fallback message for browsers
 
 You can use the `preload` attribute to hint to the browser whether to preload the audio data.
 
-```html
+```html showLineNumbers /preload/
 <audio controls preload="auto">
   <!-- sources here -->
 </audio>
@@ -156,7 +156,7 @@ The `<audio>` element also supports the following advanced features:
 
 You can use the `#t` parameter to specify a media fragment, which allows you to specify a start and end time for the audio.
 
-```html
+```html showLineNumbers /#t=10,20/
 <audio controls>
   <source src="music.mp3#t=10,20" type="audio/mpeg" />
   <source src="music.ogg#t=10,20" type="audio/ogg" />
@@ -168,7 +168,7 @@ You can use the `#t` parameter to specify a media fragment, which allows you to 
 
 You can use the `capture` attribute to record audio from the user's microphone.
 
-```html
+```html showLineNumbers /capture/
 <audio controls capture>
   <!-- sources here -->
 </audio>
