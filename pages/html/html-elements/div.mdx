@@ -1,0 +1,356 @@
+---
+title: <div> Element - Introduction to HTML
+description: Learn about the HTML <div> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - div&desc=Learn about the div element, its syntax, attributes, best practices."
+---
+
+import * as React from "react";
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<div>`
+
+The `<div>` element, short for _division_, is a **block-level** container in HTML used to group and structure content within a web page.
+
+## Syntax
+
+Here's the basic syntax of the `<div>` element:
+
+```html showLineNumbers
+<div>
+  <p>This is a paragraph.</p>
+</div>
+```
+
+**Output:**
+
+<div>
+  <p>This is a paragraph.</p>
+</div>
+
+The `<div>` element is a **container** element, which means it can **contain** other HTML elements inside it. In the above example, we have a `<p>` element inside the `<div>` element. The `<p>` element is a **block-level** element, which means it takes up the entire width of the page. The `<div>` element is also a block-level element, so it takes up the entire width of the page as well but we cannot see `div` itself on the page. It is just a **container** for other elements.
+
+## Attributes
+
+The `div` element has no special attributes. It includes all the [**global attributes**](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) that are common to all HTML elements.
+
+## Example
+
+### Basic Usage
+
+```html showLineNumbers
+<div>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+</div>
+```
+
+**Output:**
+
+<div>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+</div>
+
+---
+
+### Nested `<div>` Elements
+
+```html showLineNumbers
+<div>
+  <p>This is a paragraph.</p>
+  <div>
+    <p>This is another paragraph.</p>
+  </div>
+</div>
+```
+
+**Output:**
+
+<div>
+  <p>This is a paragraph.</p>
+  <div>
+    <p>This is another paragraph.</p>
+  </div>
+</div>
+
+---
+
+### `<div>` Element with Styling
+
+```html showLineNumbers
+<div style="background-color: gray; color: white; padding: 0.5rem;">
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+</div>
+```
+
+**Output:**
+
+export const DivElementWithStyling = () => (
+  <div style={{ backgroundColor: "gray", color: "white", padding: "0.5rem" }}>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+  </div>
+);
+
+<DivElementWithStyling />
+
+---
+
+### Nested `div` Elements with Styling
+
+```html showLineNumbers
+<div style="background-color: BurlyWood; color: black; padding: 0.5rem;">
+  <p>This is a paragraph.</p>
+  <div style="background-color: bisque; color: black; padding: 0.5rem;">
+    <p>This is another paragraph.</p>
+  </div>
+</div>
+```
+
+**Output:**
+
+export const NestedDivElementWithStyling = () => (
+  <div
+    style={{ backgroundColor: "BurlyWood", color: "black", padding: "0.5rem" }}
+  >
+    <p>This is a paragraph.</p>
+    <div
+      style={{ backgroundColor: "bisque", color: "black", padding: "0.5rem" }}
+    >
+      <p>This is another paragraph.</p>
+    </div>
+  </div>
+);
+
+<NestedDivElementWithStyling />
+
+## Best Practices
+
+- Use `<div>` for grouping and structuring content, not for semantic meaning.
+- Use meaningful `class` and `id` names to enhance code readability and maintainability.
+- Avoid excessive nesting of `<div>` elements, as it can lead to overly complex HTML structures.
+
+## Advanced Features
+
+The `<div>` element can be used in more advanced scenarios as well:
+
+### Layouts
+
+The `<div>` element is often used to create layouts in HTML. For example, you can use the `<div>` element to create a two-column layout like this:
+
+```html showLineNumbers
+<div style="display: flex;">
+  <div style="flex: 1;">
+    <p>This is the first column.</p>
+  </div>
+  <div style="flex: 1;">
+    <p>This is the second column.</p>
+  </div>
+</div>
+```
+
+**Output:**
+
+export const TwoColumnLayout = () => (
+  <div style={{ display: "flex" }}>
+    <div style={{ flex: 1 }}>
+      <p>This is the first column.</p>
+    </div>
+    <div style={{ flex: 1 }}>
+      <p>This is the second column.</p>
+    </div>
+  </div>
+);
+
+<TwoColumnLayout />
+
+---
+
+### Styling
+
+The `<div>` element can be used to apply styles to a group of elements. For example, you can use the `<div>` element to apply a background color to a group of elements like this:
+
+```html showLineNumbers
+<div style="background-color: gray; color: white; padding: 0.5rem;">
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+</div>
+```
+
+**Output:**
+
+export const DivElementWithStyling2 = () => (
+  <div style={{ backgroundColor: "gray", color: "white", padding: "0.5rem" }}>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+  </div>
+);
+
+<DivElementWithStyling2 />
+
+---
+
+### JavaScript Manipulation
+
+The `<div>` element can be used to manipulate the DOM using JavaScript. For example, you can use the `<div>` element to change the text of a paragraph like this:
+
+```html showLineNumbers
+<div>
+  <p id="paragraph">This is a paragraph.</p>
+</div>
+<button
+  onClick="document.getElementById('paragraph').innerHTML = 'This is a new paragraph.'"
+>
+  Change Text
+</button>
+<script>
+  const button = document.querySelector("button");
+  button.addEventListener("click", () => {
+    document.getElementById("paragraph").innerHTML = "This is a new paragraph.";
+  });
+</script>
+```
+
+**Output:**
+
+export const DivElementWithJavaScriptManipulation = () => {
+    const [text, setText] = React.useState("This is a paragraph.");
+
+    return (
+        <>
+            <div>
+                <p id="paragraph">{text}</p>
+            </div>
+            <button style={{ marginTop: "1rem", backgroundColor: "ForestGreen", color: "white", padding: "0.5rem" }} onClick={() => setText("This is a new paragraph.")}>Change Text</button>
+        </>
+    );
+
+}
+
+<DivElementWithJavaScriptManipulation />
+
+In summary, the `<div>` element is a fundamental HTML **block-level container** used for grouping and structuring content within a web page. While it doesn't have mandatory attributes, it can be enhanced with `id`, `class`, and `style` attributes to suit various purposes. Following best practices and exploring advanced usages can help create well-structured and responsive web layouts.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex <div> Element Usage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .sidebar {
+            float: left;
+            width: 30%;
+            background-color: #eee;
+            padding: 20px;
+        }
+
+        .main-content {
+            float: left;
+            width: 70%;
+            padding: 20px;
+        }
+
+        .footer {
+            clear: both;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Our Complex Layout</h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <p>This is the sidebar content.</p>
+            </div>
+            <div class="main-content">
+                <h2>Main Content</h2>
+                <p>This is the main content of our complex layout. It demonstrates the use of the <code>&lt;div&gt;</code> element for structuring a multi-column webpage layout.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2023 Your Website Name</p>
+        </div>
+    </div>
+</body>
+</html>`,
+  }}
+/>
