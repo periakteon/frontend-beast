@@ -1,0 +1,258 @@
+---
+title: <em> Element - Introduction to HTML
+description: Learn about the HTML <em> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - em&desc=Learn about the em element, its syntax, attributes, best practices."
+---
+
+import * as React from "react";
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<em>`
+
+The `<em>` element, short for **emphasis**, is used to indicate text that should be emphasized in some way, typically by rendering it in _italic_.
+
+## Syntax
+
+It is an [**inline-level element**](https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content) and is written using the following syntax:
+
+```html showLineNumbers /em/
+<em>Emphasized Text</em>
+```
+
+**Output:**
+
+<em>Emphasized Text</em>
+
+## Attributes
+
+The `<em>` element does not have any specific attributes of its own. However, it can accept [**global attributes**](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) such as `class`, `id`, `style`, and more, which allow you to apply [**CSS**](/css) styles or [**JavaScript**](/javascript) interactions.
+
+## Examples
+
+### Example 1: Emphasizing Text
+
+The `<em>` element is used to emphasize text. It is typically rendered in _italic_ by default, but this can be changed using [**CSS**](/css).
+
+```html showLineNumbers /em/
+<p>This is a <em>very</em> important word.</p>
+```
+
+**Output:**
+
+export const Em = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
+
+return <p>This is a <em>very</em> important word.</p>;
+};
+
+<Em />
+
+---
+
+### Example 2: Emphasizing Text in a Quote
+
+The `<em>` element can be used to emphasize text in a quote.
+
+```html showLineNumbers /em/
+<blockquote>
+  <p>
+    It is <em>not</em> the strongest of the species that survives, nor the most
+    intelligent that survives. It is the one that is the most adaptable to
+    change.
+  </p>
+  <footer>Charles Darwin</footer>
+</blockquote>
+```
+
+**Output:**
+
+export const EmInQuote = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
+
+return (
+
+<blockquote>
+  <p>
+    It is <em>not</em> the strongest of the species that survives, nor the most
+    intelligent that survives. It is the one that is the most adaptable to
+    change.
+  </p>
+  <footer>Charles Darwin</footer>
+</blockquote>
+); };
+
+<EmInQuote />
+
+---
+
+### Example 3: Nesting with Strong Emphasis
+
+The `<em>` element can be nested inside the [`<strong>`](/html/html-elements/strong) element to create a stronger emphasis.
+
+```html showLineNumbers /em/
+<p>
+  This is a <strong>very <em>very</em> important</strong> word.
+</p>
+```
+
+**Output:**
+
+export const NestedEm = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
+
+return (
+
+<p>
+  This is a{" "}
+  <strong>
+    very <em>very</em> important
+  </strong>{" "}
+  word.
+</p>
+); };
+
+<NestedEm />
+
+---
+
+### Example 4: Using Attributes
+
+```html showLineNumbers /em/2,3 /id/
+<style>
+  #note {
+    background-color: yellow;
+    color: black;
+    padding: 0.5rem;
+  }
+</style>
+
+<p>This is a <em id="note">note</em>.</p>
+```
+
+**Output:**
+
+export const StyledEm = () => {
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
+
+return (
+
+<p>
+  This is a{" "}
+  <em style={{ backgroundColor: "yellow", color: "black", padding: "0.5rem" }}>
+    note
+  </em>
+  .
+</p>
+); };
+
+<StyledEm />
+
+## Best Practices
+
+- Use the `<em>` element to provide semantic emphasis to text that deserves special attention.
+- Avoid using `<em>` solely for styling purposes; instead, use [**CSS**](/css) for styling.
+- Consider using `<strong>` for stronger emphasis when necessary.
+
+## Advanced Features
+
+- **Accessibility:** Ensure that emphasized text is accessible to screen readers and other assistive technologies by using appropriate [**ARIA roles**](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) and labels.
+
+- **Styling:** Customize the appearance of emphasized text using [**CSS**](/css) to match your design requirements.
+
+- **JavaScript Interaction:** You can use JavaScript to interact with `<em>` elements, such as adding event listeners for specific actions when users interact with emphasized text.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex 'em' Element Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .highlight {
+            color: #FF5733;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Complex <code>em</code> Element Example</h1>
+    
+    <p>This is a complex example that showcases various uses of the <code>em</code> element.</p>
+    
+    <p>
+        <em class="highlight">Emphasized text</em> is often used to give certain words or phrases
+        special attention. It can be <em>combined with <span class="highlight">highlighting</span></em>
+        for added emphasis.
+    </p>
+    
+    <p>
+        You can also <em class="highlight">nest</em> <em>emphasized text</em> within other elements,
+        such as within a <strong>strongly emphasized text</strong> block or even a <a href="#" class="highlight">hyperlink</a>.
+    </p>
+    
+    <p>
+        In this example, we've applied a custom CSS class, <span class="highlight">.highlight</span>,
+        to some instances of the "<em>" element to give them a unique appearance.
+    </p>
+    
+    <p>
+        Remember that the use of <em>emphasis</em> should always serve a <strong>semantic</strong>
+        purpose and not just be used for <em class="highlight">styling</em>. Proper semantic
+        HTML helps with <em>accessibility</em> and <em>SEO</em>.
+    </p>
+</body>
+</html>`,
+  }}
+/>
