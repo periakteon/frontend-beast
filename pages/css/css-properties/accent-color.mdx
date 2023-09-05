@@ -1,0 +1,267 @@
+---
+title: accent-color Property - Introduction to CSS
+description: Learn about the CSS accent-color property, its definition, syntax, property values, best practices, and more.
+date: 2023-09-05
+image: "https://frontendbeast.com/api/og?title=CSS Property - accent-color&desc=Learn about the accent-color property, its definition, syntax, property values, best practices, and more."
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# CSS Property: `accent-color`
+
+The `accent-color` property in CSS is used to define **the accent color of an element**. Accent colors are typically used for **highlighting** or **emphasizing** certain parts of a webpage, such as links or buttons. This property allows web developers to customize the accent color to match the overall design of their website.
+
+## Syntax
+
+The syntax for using the `accent-color` property is as follows:
+
+```css showLineNumbers
+selector {
+  accent-color: <color>;
+}
+```
+
+Where:
+
+- `selector` is the [**HTML element**](/html/html-elements) or class to which you want to apply the accent color.
+- `value` is the color value you want to set as the accent color.
+
+The `accent-color` property is a **custom property** that can be used to define the accent color of an element. The value of this property can be any valid CSS color value, such as a **hexadecimal color code**, **RGB color value**, or **color keyword**.
+
+## Property Values
+
+The `accent-color` property accepts various types of values:
+
+### Color Values
+
+You can specify the accent color using color values such as **hexadecimal**, **RGB**, **RGBA**, **HSL**, **HSLA**, or **color names**.
+
+#### **Hexadecimal Color Code**
+
+The hexadecimal color code is a six-digit code that represents the amount of red, green, and blue in a color. For example, `#ff0000` is the hexadecimal color code for red.
+
+```css showLineNumbers filename="style.css"
+p {
+  accent-color: #ff0000;
+}
+```
+
+---
+
+#### **RGB Color Value**
+
+The RGB color value is a three-digit code that represents the amount of red, green, and blue in a color. For example, `rgb(255, 0, 0)` is the RGB color value for red.
+
+```css showLineNumbers filename="style.css"
+p {
+  accent-color: rgb(255, 0, 0);
+}
+```
+
+---
+
+#### **RGBA Color Value**
+
+The RGBA color value is a four-digit code that represents the amount of red, green, blue, and alpha (transparency) in a color. For example, `rgba(255, 0, 0, 0.5)` is the RGBA color value for red with 50% transparency.
+
+```css showLineNumbers filename="style.css"
+p {
+  accent-color: rgba(255, 0, 0, 0.5);
+}
+```
+
+---
+
+#### **HSL Color Value**
+
+The HSL color value is a three-digit code that represents the hue, saturation, and lightness of a color. For example, `hsl(0, 100%, 50%)` is the HSL color value for red.
+
+```css showLineNumbers filename="style.css"
+p {
+  accent-color: hsl(0, 100%, 50%);
+}
+```
+
+---
+
+#### **HSLA Color Value**
+
+The HSLA color value is a four-digit code that represents the hue, saturation, lightness, and alpha (transparency) of a color. For example, `hsla(0, 100%, 50%, 0.5)` is the HSLA color value for red with 50% transparency.
+
+```css showLineNumbers filename="style.css"
+p {
+  accent-color: hsla(0, 100%, 50%, 0.5);
+}
+```
+
+---
+
+#### **Color Keyword**
+
+The color keyword is a predefined color name that represents a specific color. For example, `red` is the color keyword for red.
+
+```css showLineNumbers filename="style.css"
+p {
+  accent-color: red;
+}
+```
+
+## Example
+
+```css showLineNumbers
+/* Using a hexadecimal color value */
+.button {
+  accent-color: #ff5733;
+}
+
+/* Using an RGB color value */
+.link {
+  accent-color: rgb(0, 128, 255);
+}
+
+/* Using a color name */
+.alert {
+  accent-color: red;
+}
+```
+
+## Best Practices
+
+- "Choose an accent color that complements your website's overall color scheme.
+- Ensure that the accent color provides good contrast and readability, especially for text and interactive elements.
+- Test the accent color across different devices and browsers to ensure consistency.
+
+## Advanced Features
+
+### Using the `accent-color` Property with `:focus-visible` Pseudo-class
+
+The `:focus-visible` pseudo-class is used to apply styles to an element when it is focused using the keyboard or a similar input device. This pseudo-class can be used in conjunction with the `accent-color` property to apply the accent color to an element when it is focused.
+
+```css showLineNumbers
+/* Using the :focus-visible pseudo-class */
+.button:focus-visible {
+  accent-color: #ff5733;
+}
+```
+
+### Using the `accent-color` Property with `:hover` Pseudo-class
+
+The `:hover` pseudo-class is used to apply styles to an element when the user hovers over it with their mouse cursor. This pseudo-class can be used in conjunction with the `accent-color` property to apply the accent color to an element when it is hovered over.
+
+```css showLineNumbers
+/* Using the :hover pseudo-class */
+.button:hover {
+  accent-color: #ff5733;
+}
+```
+
+### With Custom Variables
+
+The `accent-color` property can be used with custom variables to define the accent color of an element. This allows web developers to easily change the accent color of an element without having to modify the CSS code.
+
+```css showLineNumbers
+/* Using custom variables */
+:root {
+  --accent-color: #ff5733;
+}
+
+.button {
+  accent-color: var(--accent-color);
+}
+```
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accent Color Example</title>
+    <style>
+        /* Define a custom accent color variable */
+        :root {
+            --custom-accent-color: #ff5733;
+        }
+
+        /* Style for the page header */
+        header {
+            background-color: var(--custom-accent-color);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Style for links with accent color */
+        a {
+            text-decoration: none;
+            color: var(--custom-accent-color);
+            transition: color 0.3s ease;
+        }
+
+        /* Style for links on hover */
+        a:hover {
+            color: #ff9955; /* Change accent color on hover */
+        }
+
+        /* Style for a button with accent color */
+        .button {
+            background-color: var(--custom-accent-color);
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Style for a button on hover */
+        .button:hover {
+            background-color: #ff9955; /* Change background color on hover */
+        }
+
+        /* Style for a blockquote with accent border */
+        blockquote {
+            border-left: 3px solid var(--custom-accent-color);
+            padding-left: 10px;
+            margin: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website</h1>
+    </header>
+
+    <main>
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Learn more</a> about our company.</p>
+
+        <h2>Our Services</h2>
+        <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+        </ul>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions, please <a href="#">contact us</a>.</p>
+
+        <blockquote>
+            "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs
+        </blockquote>
+
+        <button class="button">Get Started</button>
+    </main>
+
+</body>
+</html>`,
+  }}
+/>
