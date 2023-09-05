@@ -19,5 +19,6 @@
   "del": "<del>",
   "details": "<details>",
   "div": "<div>",
-  "em": "<em>"
+  "em": "<em>",
+  "embed": "<embed>"
 }

@@ -1,0 +1,189 @@
+---
+title: <embed> Element - Introduction to HTML
+description: Learn about the HTML <embed> element, its syntax, attributes, best practices, and more.
+date: 2023-09-05
+image: "https://frontendbeast.com/api/og?title=HTML Element - embed&desc=Learn about the embed element, its syntax, attributes, best practices."
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<embed>`
+
+The `<embed>` element in HTML is used to embed external content or multimedia, such as audio, video, or interactive applications, within an HTML document
+
+## Syntax
+
+Here's the basic syntax of the `<embed>` element:
+
+```html showLineNumbers
+<embed src="URL" type="media_type" [optional attributes] />
+```
+
+The `<embed>` element is an empty element, meaning it doesn't have a closing tag. It must have a `src` attribute, which specifies the URL of the resource to be embedded. It also has a `type` attribute, which specifies the media type of the resource.
+
+## Attributes
+
+The `<embed>` element has the following attributes:
+
+### `src`
+
+The `src` attribute specifies the URL of the resource to be embedded. It can be an absolute or relative URL.
+
+### `type`
+
+The `type` attribute specifies the media type of the resource. It can be any of the **MIME types** listed [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
+
+### `width`
+
+The `width` attribute specifies the width of the embedded resource in pixels. It can be any positive integer.
+
+### `height`
+
+The `height` attribute specifies the height of the embedded resource in pixels. It can be any positive integer.
+
+## Example
+
+### Video Embed
+
+Here's an example of embedding a video using the `<embed>` element:
+
+```html showLineNumbers /video/
+<embed
+  src="https://www.youtube.com/embed/9bZkp7q19f0"
+  type="video/mp4"
+  width="560"
+  height="315"
+/>
+```
+
+**Output:**
+
+export const VideoEmbedFunction = () => {
+  return (
+    <div>
+      <embed
+        src="https://www.youtube.com/embed/9bZkp7q19f0"
+        type="video/mp4"
+        width="560"
+        height="315"
+      />
+    </div>
+  );
+};
+
+<VideoEmbedFunction />
+
+---
+
+### Audio Embed
+
+Here's an example of embedding an audio file using the `<embed>` element:
+
+```html showLineNumbers /audio/
+<embed
+  src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  type="audio/mp3"
+  width="350"
+  height="75"
+/>
+```
+
+**Output:**
+
+export const AudioEmbedFunction = () => {
+  return (
+    <div className="audio-embed">
+      <audio controls>
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          type="audio/mp3"
+        />
+        Tarayıcınız bu sesi desteklemiyor.
+      </audio>
+    </div>
+  );
+};
+
+<AudioEmbedFunction />
+
+## Best Practices
+
+- Always specify the `src` and `type` attributes to ensure compatibility.
+- Use the `width` and `height` attributes to define the dimensions of the embedded content.
+- Provide alternative content within `<object>` or `<iframe>` elements for browsers that don't support `<embed>`.
+- Be cautious with `autoplay`, as it can be intrusive to users.
+
+## Advanced Features
+
+### `autoplay`
+
+The `autoplay` attribute specifies that the embedded content should automatically start playing as soon as it's ready. It's a boolean attribute, meaning it doesn't require a value.
+
+```html showLineNumbers /autoplay/
+<embed
+  src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  type="audio/mp3"
+  width="350"
+  height="75"
+  autoplay
+/>
+```
+
+### `loop`
+
+The `loop` attribute specifies that the embedded content should start over again when it reaches the end. It's a boolean attribute, meaning it doesn't require a value.
+
+```html showLineNumbers /loop/
+<embed
+  src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  type="audio/mp3"
+  width="350"
+  height="75"
+  loop
+/>
+```
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Content Example</title>
+    <style>
+        /* Styling for the container */
+        .embed-container {
+            width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        /* Styling for the embedded content */
+        .embedded-content {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="embed-container">
+        <h1>Embedded Content Example</h1>
+        <p>Check out this embedded video:</p>
+        
+        <!-- Video Example -->
+        <embed class="embedded-content" src="https://www.youtube.com/embed/dQw4w9WgXcQ" type="video/mp4" autoplay controls></embed>
+    </div>
+</body>
+</html>`,
+  }}
+/>
