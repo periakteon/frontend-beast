@@ -1,0 +1,313 @@
+---
+title: align-content Property - Introduction to CSS
+description: Learn about the CSS align-content property, its definition, syntax, property values, best practices, and more.
+date: 2023-09-05
+image: "https://frontendbeast.com/api/og?title=CSS Property - align-content&desc=Learn about the align-content property, its definition, syntax, property values, best practices, and more."
+---
+
+import * as React from "react";
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# CSS Property: `align-content`
+
+The `align-content` property is used in CSS to define how space is distributed between and around multiple lines of flexbox or grid items when there's extra space available along the cross-axis. This property is particularly useful when you have a container with multiple lines of items and you want to control their alignment in relation to the cross-axis.
+
+## Syntax
+
+The syntax for using the `align-content` property is as follows:
+
+```css showLineNumbers
+.container {
+  align-content: <value>;
+}
+```
+
+- **`container`:** This represents the parent container that contains multiple lines of flex or grid items.
+- **`value`:** Specifies how the lines of items should be aligned. It can take various values, which we'll explore in the next section.
+
+## Property Values
+
+The `align-content` property can take the following values:
+
+### `stretch`
+
+The `stretch` value is the default value for the `align-content` property. It stretches the lines of items to fill the container. This is the default behavior of flexbox and grid items.
+
+```css showLineNumbers
+.container {
+  display: flex;
+  align-content: stretch;
+}
+```
+
+---
+
+### `center`
+
+The `center` value aligns the lines of items to the center of the container.
+
+```css showLineNumbers
+.container {
+  display: flex;
+  align-content: center;
+}
+```
+
+---
+
+### `flex-start`
+
+The `flex-start` value aligns the lines of items to the start of the container.
+
+```css showLineNumbers
+.container {
+  display: flex;
+  align-content: flex-start;
+}
+```
+
+---
+
+### `flex-end`
+
+The `flex-end` value aligns the lines of items to the end of the container.
+
+```css showLineNumbers
+.container {
+  display: flex;
+  align-content: flex-end;
+}
+```
+
+---
+
+### `space-between`
+
+The `space-between` value distributes the lines of items evenly along the cross-axis. The first line of items is placed at the start of the container, the last line of items is placed at the end of the container, and the remaining lines of items are evenly distributed in between.
+
+```css showLineNumbers
+.container {
+  display: flex;
+  align-content: space-between;
+}
+```
+
+---
+
+### `space-around`
+
+The `space-around` value distributes the lines of items evenly along the cross-axis. The lines of items are evenly distributed with equal space around them.
+
+```css showLineNumbers
+.container {
+  display: flex;
+  align-content: space-around;
+}
+```
+
+---
+
+### `space-evenly`
+
+The `space-evenly` value distributes the lines of items evenly along the cross-axis. The lines of items are evenly distributed with equal space around them, including the space before the first line and after the last line.
+
+```css showLineNumbers
+.container {
+  display: flex;
+  align-content: space-evenly;
+}
+```
+
+---
+
+### `baseline`
+
+The `baseline` value aligns the lines of items to their baselines. This value is only applicable when the lines of items have different baselines.
+
+```css showLineNumbers
+.container {
+  display: flex;
+  align-content: baseline;
+}
+```
+
+---
+
+### `start`
+
+The `start` value aligns the lines of items to the start of the container.
+
+```css showLineNumbers
+.container {
+  display: grid;
+  align-content: start;
+}
+```
+
+---
+
+### `end`
+
+The `end` value aligns the lines of items to the end of the container.
+
+```css showLineNumbers
+.container {
+  display: grid;
+  align-content: end;
+}
+```
+
+## Example
+
+Let's take a look at an example that demonstrates how the `align-content` property works in CSS:
+
+```html showLineNumbers /align-content/
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Align Content Component</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 200px;
+        border: 2px solid #ccc;
+        align-content: space-between;
+      }
+
+      .item {
+        width: 100px;
+        height: 50px;
+        background-color: #3498db;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Content 1</div>
+      <div class="item">Content 2</div>
+      <div class="item">Content 3</div>
+    </div>
+  </body>
+</html>
+```
+
+In the above example, we have a flex container with multiple lines of items. We've used the `flex-wrap` property to wrap the items into multiple lines. We've also used the `align-content` property to distribute the lines of items evenly along the cross-axis with equal space between them.
+
+**Output:**
+
+export const AlignContentComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    const containerStyle = {
+            display: 'flex',
+            flexWrap: 'wrap',
+            height: '200px',
+            border: '2px solid #ccc',
+            alignContent: 'space-between',
+        };
+
+        const itemStyle = {
+            width: '100px',
+            height: '50px',
+            backgroundColor: '#3498db',
+            margin: '5px',
+        };
+
+    return (
+     <div style={containerStyle}>
+      <div style={itemStyle}>Content 1</div>
+      <div style={itemStyle}>Content 2</div>
+      <div style={itemStyle}>Content 3</div>
+    </div>
+    );
+
+}
+
+<AlignContentComponent />
+
+## Best Practices
+
+- Use `align-content` when you have a container with multiple lines of flex or grid items.
+- Consider the design and layout requirements when choosing the appropriate value for `align-content`.
+
+## Advanced Features
+
+- Combining `align-content` with other flex or grid properties like `flex-wrap` and `justify-content` allows for fine-grained control over layout.
+- You can use media queries to change `align-content` values based on screen size, optimizing the layout for different devices.
+
+## Conclusion
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 800px;
+      gap: 10px;
+      align-content: space-between;
+      padding: 10px;
+      border: 2px solid #ccc;
+      background-color: #fff;
+    }
+
+    .image {
+      flex: 0 0 calc(33.33% - 10px); /* 3 columns with a 10px gap */
+      height: 150px;
+      background-color: #007acc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <div class="image"></div>
+    <div class="image"></div>
+    <div class="image"></div>
+    <div class="image"></div>
+    <div class="image"></div>
+    <div class="image"></div>
+    <div class="image"></div>
+    <div class="image"></div>
+    <div class="image"></div>
+  </div>
+</body>
+</html>`,
+  }}
+/>
