@@ -1,0 +1,851 @@
+---
+title: How to Use JavaScript - Frontend Beast
+description: How to Use JavaScript - An article on how to use JavaScript in web development.
+date: 2023-09-01
+image: "https://frontendbeast.com/api/og?title=How to Use JavaScript&desc=An article on how to use JavaScript in web development."
+---
+
+import * as React from "react";
+import { Tabs, Tab, Callout, Steps } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../hooks/useDarkTheme";
+
+# JavaScript: How to Use?
+
+JavaScript is a versatile and powerful programming language that allows you to add interactivity and dynamic behavior to your web pages. In this comprehensive guide, we will explore how to use JavaScript in [**HTML**](/html) files, covering various techniques and providing plenty of examples.
+
+## Introduction
+
+JavaScript is a client-side (in **Node.js**, server-side) scripting language that enhances the functionality of web pages by enabling interactions, data manipulation, and more. To get started, let's look at how to include JavaScript in your [**HTML**](/html) documents.
+
+## Adding JavaScript to HTML
+
+There are multiple ways to include JavaScript in your [**HTML**](/html) files:
+
+### Inline JavaScript
+
+You can embed JavaScript directly within your HTML file using the `<script>` tag. Here's an example:
+
+```html showLineNumbers /script/ {8-11} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inline JavaScript Example</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <script>
+      // JavaScript code here
+      alert("This is an inline JavaScript example!");
+    </script>
+  </body>
+</html>
+```
+
+### External JavaScript File
+
+To keep your code organized and reusable, it's common to place JavaScript code in external files with a `.js` extension. Here's how you can link an external JavaScript file to your HTML:
+
+```html showLineNumbers /script.js/ {5} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>External JavaScript Example</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+```
+
+In this example, the JavaScript code is stored in a file named `script.js`.
+
+<Callout type="info" emoji="ℹ️">
+  Put the `script.js` and `index.html` files in the **same directory**.
+  Otherwise, you'll need to specify the path to the JavaScript file.
+</Callout>
+
+## JavaScript Placement
+
+The placement of JavaScript code within your HTML file can affect how it interacts with the HTML elements. Here are some key points to consider:
+
+### Placing JavaScript in the `<head>` section
+
+When you place JavaScript in the `<head>` section of your HTML file, it's executed **before the HTML content is fully loaded**. This can be useful for defining global variables or functions that will be used throughout the page.
+
+```html showLineNumbers {3-10} /head/1,4 filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript in Head</title>
+    <script>
+      // JavaScript code in the head
+      let message = "Hello from the head!";
+      alert(message);
+    </script>
+  </head>
+  <body>
+    <!-- HTML content -->
+  </body>
+</html>
+```
+
+<Callout type="warning" emoji="⚠️">
+ If you place JavaScript in the `<head>` section, make sure to use the `defer` attribute to ensure that the code is executed after the HTML content is loaded. Otherwise, you may encounter errors.
+ Look at the [third section](#3-placing-javascript-in-the-head-section-with-defer) for more details.
+</Callout>
+
+### 2. Placing JavaScript at the end of `<body>`
+
+Placing JavaScript at the end of the `<body>` tag ensures that it runs **after the HTML content has loaded**. This is often **recommended** to improve page loading performance.
+
+```html showLineNumbers {6-13} /body/1,4 filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript at the End of Body</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <script>
+      // JavaScript code at the end of body
+      let message = "Hello from the end of body!";
+      alert(message);
+    </script>
+  </body>
+</html>
+```
+
+### 3. Placing JavaScript in the `<head>` section with `defer`
+
+You can also place JavaScript in the `<head>` section and use the `defer` attribute to ensure that it runs **after the HTML content has loaded**. This is a good option if you want to keep your JavaScript code in the `<head>` section.
+
+```html showLineNumbers {3-10} /head/1,4 /defer/1 filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript in Head with Defer</title>
+    <script defer>
+      // JavaScript code in the head with defer
+      let message = "Hello from the head with defer!";
+      alert(message);
+    </script>
+  </head>
+  <body>
+    <!-- HTML content -->
+  </body>
+</html>
+```
+
+## Basic JavaScript Examples
+
+Let's explore some basic JavaScript examples to understand how to work with JavaScript in HTML:
+
+### 1. Displaying a Message
+
+```html showLineNumbers {7-12} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Displaying a Message</title>
+  </head>
+  <body>
+    <button onclick="displayMessage()">Click Me</button>
+    <script>
+      function displayMessage() {
+        alert("Button clicked!");
+      }
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const DisplayMessageComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <button
+            style={{ padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }}
+                onClick={() => alert("Button clicked!")}
+            >
+                Click Me
+            </button>
+        </div>
+    );
+
+}
+
+<DisplayMessageComponent />
+
+In this example, clicking the button triggers a JavaScript function to display an alert.
+
+### 2. Manipulating HTML Elements
+
+```html showLineNumbers {7-13} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Manipulating HTML Elements</title>
+  </head>
+  <body>
+    <p id="demo">This is a paragraph.</p>
+    <button onclick="changeText()">Change Text</button>
+    <script>
+      function changeText() {
+        document.getElementById("demo").innerHTML = "Text changed!";
+      }
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const ManipulateHtmlComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [text, setText] = React.useState("This is a paragraph.");
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <p id="demo">{text}</p>
+            <button
+            style={{ padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }}
+                onClick={() => setText("Text changed!")}
+            >
+                Change Text
+            </button>
+        </div>
+    );
+
+}
+
+<ManipulateHtmlComponent />
+
+This example demonstrates how to change the content of an HTML element using JavaScript.
+
+### 3. Working with Variables
+
+```html showLineNumbers {7-20} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Working with Variables</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <button onclick="changeText()">Change Text</button>
+    <script>
+      let name = "John";
+      let age = 30;
+      let message = `My name is ${name} and I am ${age} years old.`;
+
+      function changeText() {
+        name = "Jane";
+        age = 25;
+        message = `My name is ${name} and I am ${age} years old.`;
+        document.getElementById("demo").innerHTML = message;
+      }
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const WorkingWithVariablesComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [text, setText] = React.useState("My name is John and I am 30 years old.");
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <p id="demo">{text}</p>
+            <button
+            style={{ padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }}
+                onClick={() => setText("My name is Jane and I am 25 years old.")}
+            >
+                Change Text
+            </button>
+        </div>
+    );
+
+}
+
+<WorkingWithVariablesComponent />
+
+This example demonstrates how to work with variables in JavaScript.
+
+### 4. Working with Arrays
+
+```html showLineNumbers {7-20} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Working with Arrays</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <button onclick="changeText()">Change Text</button>
+    <script>
+      let fruits = ["Apple", "Banana", "Orange"];
+      let message = `I like ${fruits[0]}, ${fruits[1]}, and ${fruits[2]}.`;
+
+      function changeText() {
+        fruits[0] = "Mango";
+        fruits[1] = "Pineapple";
+        fruits[2] = "Watermelon";
+        message = `I like ${fruits[0]}, ${fruits[1]}, and ${fruits[2]}.`;
+        document.getElementById("demo").innerHTML = message;
+      }
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const WorkingWithArraysComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [text, setText] = React.useState("I like Apple, Banana, and Orange.");
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <p id="demo">{text}</p>
+            <button
+            style={{ padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }}
+                onClick={() => setText("I like Mango, Pineapple, and Watermelon.")}
+            >
+                Change Text
+            </button>
+        </div>
+    );
+
+}
+
+<WorkingWithArraysComponent />
+
+This example demonstrates how to work with arrays in JavaScript.
+
+### 5. Working with Objects
+
+```html showLineNumbers {7-22} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Working with Objects</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <button onclick="changeText()">Change Text</button>
+    <script>
+      let person = {
+        name: "John",
+        age: 30,
+        message: `My name is ${this.name} and I am ${this.age} years old.`,
+      };
+
+      function changeText() {
+        person.name = "Jane";
+        person.age = 25;
+        person.message = `My name is ${this.name} and I am ${this.age} years old.`;
+        document.getElementById("demo").innerHTML = person.message;
+      }
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const WorkingWithObjectsComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [text, setText] = React.useState("My name is John and I am 30 years old.");
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <p id="demo">{text}</p>
+            <button
+            style={{ padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }}
+                onClick={() => setText("My name is Jane and I am 25 years old.")}
+            >
+                Change Text
+            </button>
+        </div>
+    );
+
+}
+
+<WorkingWithObjectsComponent />
+
+This example demonstrates how to work with objects in JavaScript.
+
+### 6. Changing CSS Styles
+
+```html showLineNumbers {7-14} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Changing CSS Styles</title>
+  </head>
+  <body>
+    <p id="demo">This is a paragraph.</p>
+    <button onclick="changeStyle()">Change Style</button>
+    <script>
+      function changeStyle() {
+        document.getElementById("demo").style.color = "red";
+        document.getElementById("demo").style.fontSize = "2rem";
+      }
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const ChangingCssStylesComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [text, setText] = React.useState("This is a paragraph.");
+    const [style, setStyle] = React.useState({
+        color: 'black',
+        fontSize: '1rem',
+      });
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+const changeStyle = () => {
+setStyle({
+color: 'red',
+fontSize: '2rem',
+});
+};
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <p style={style}>This is a paragraph.</p>
+      <button style={{ marginTop: "10px", padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }} onClick={changeStyle}>Change Style</button>
+        </div>
+    );
+
+}
+
+<ChangingCssStylesComponent />
+
+### 7. Higlighting HTML Elements
+
+```html showLineNumbers {12-19} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Changing CSS Styles</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="demo">This is a paragraph.</p>
+    <button onclick="highlightText()">Highlight Text</button>
+    <script>
+      function highlightText() {
+        let paragraph = document.getElementById("demo");
+        paragraph.classList.add("highlight");
+      }
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const HighlightingHtmlElementsComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [text, setText] = React.useState("This is a paragraph.");
+    const [style, setStyle] = React.useState({
+        color: 'black',
+        fontSize: '1rem',
+      });
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+const highlightText = () => {
+setStyle({
+backgroundColor: 'yellow',
+});
+};
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <p style={style}>This is a paragraph.</p>
+      <button style={{ marginTop: "10px", padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }} onClick={highlightText}>Highlight Text</button>
+        </div>
+    );
+
+}
+
+<HighlightingHtmlElementsComponent />
+
+This example demonstrates how to highlight HTML elements using JavaScript.
+
+### 8. Validating Form Data
+
+```html showLineNumbers {7-20} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Validating Form Data</title>
+  </head>
+  <body>
+    <form onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+      function validateForm() {
+        let name = document.getElementById("name").value;
+        if (name == "") {
+          alert("Name must be filled out");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const ValidatingFormDataComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [name, setName] = React.useState("");
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    const validateForm = () => {
+        if (name === "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    };
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <form onSubmit={validateForm}>
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    );
+
+}
+
+<ValidatingFormDataComponent />
+
+This example demonstrates how to validate form data using JavaScript.
+
+## Handling Events
+
+JavaScript enables you to respond to various events, such as **clicks**, **keypresses**, and **form submissions**. Here's an example of handling a click event:
+
+```html showLineNumbers {7-13} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Handling Click Events</title>
+  </head>
+  <body>
+    <button id="myButton">Click Me</button>
+    <script>
+      let button = document.getElementById("myButton");
+      button.addEventListener("click", function () {
+        alert("Button clicked!");
+      });
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const HandlingClickEventsComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    const handleClick = () => {
+        alert("Button clicked!");
+    };
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <button
+            style={{ padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }}
+                onClick={handleClick}
+            >
+                Click Me
+            </button>
+        </div>
+    );
+
+}
+
+<HandlingClickEventsComponent />
+
+In this example, we use the `addEventListener()` method to attach a click event handler to the button element.
+
+## Asynchronous JavaScript
+
+JavaScript can perform **asynchronous** operations, such as making **API requests** or **handling timers**. Here's a simple example using `setTimeout`:
+
+```html showLineNumbers {7-28} filename="index.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asynchronous JavaScript</title>
+  </head>
+  <body>
+    <p id="demo">This message will change after 3 seconds.</p>
+    <button id="updateButton">Update Message</button>
+    <p id="countdown">Countdown: <span id="secondsLeft">3</span> seconds</p>
+    <script>
+      document
+        .getElementById("updateButton")
+        .addEventListener("click", function () {
+          let seconds = 3;
+
+          const countdownDisplay = document.getElementById("secondsLeft");
+
+          const countdownInterval = setInterval(function () {
+            seconds--;
+            countdownDisplay.textContent = seconds;
+
+            if (seconds === 0) {
+              clearInterval(countdownInterval);
+              document.getElementById("demo").innerHTML = "Updated message!";
+            }
+          }, 1000);
+        });
+    </script>
+  </body>
+</html>
+```
+
+**Output:**
+
+export const AsynchronousJavaScriptComponent = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [text, setText] = React.useState("This message will change after 3 seconds.");
+    const [secondsLeft, setSecondsLeft] = React.useState(3);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    const handleClick = () => {
+        let seconds = 3;
+
+        const countdownInterval = setInterval(function() {
+            seconds--;
+            setSecondsLeft(seconds);
+
+            if (seconds === 0) {
+                clearInterval(countdownInterval);
+                setText("Updated message!");
+            }
+        }, 1000);
+    };
+
+    return (
+        <div style={{ padding: "1rem", backgroundColor: "#f7fafc", borderRadius: "0.5rem" }}>
+            <p id="demo">{text}</p>
+            <button
+            style={{ padding: "1rem 2rem", fontSize: "1rem", backgroundColor: "#1a202c", color: "#fff", borderRadius: "0.5rem", hover: { backgroundColor: "#2d3748" } }}
+                onClick={handleClick}
+            >
+                Update Message
+            </button>
+            <p id="countdown">Countdown: <span id="secondsLeft">{secondsLeft}</span> seconds</p>
+        </div>
+    );
+
+}
+
+<AsynchronousJavaScriptComponent />
+
+In this example, we use the `setInterval()` method to update the countdown display every second.
+
+## Conclusion
+
+In this guide, we explored how to use JavaScript in [**HTML**](/html) files. We covered various techniques and provided plenty of examples to help you get started with JavaScript.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Page</title>
+    <style>
+        /* CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product-image {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product-details {
+            flex: 2;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Product Page</h1>
+    </header>
+    <div class="container">
+        <div class="product">
+            <div class="product-image">
+                <img src="product-image.jpg" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h2>Product Name</h2>
+                <p>Description of the product goes here.</p>
+                <p>Price: $99.99</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for adding interactivity
+        function addToCart() {
+            document.body.innerHTML += "<p>Product added!</p>";
+        }
+    </script>
+
+</body>
+</html>`,
+  }}
+/>
