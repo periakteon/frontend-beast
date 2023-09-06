@@ -1,0 +1,447 @@
+---
+title: <fieldset> Element - Introduction to HTML
+description: Learn about the HTML <fieldset> element, its syntax, attributes, best practices, and more.
+date: 2023-09-02
+image: "https://frontendbeast.com/api/og?title=HTML Element - fieldset&desc=Learn about the fieldset element, its syntax, attributes, best practices."
+---
+
+import * as React from "react";
+import { Callout } from "nextra-theme-docs";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { atomDark } from "@codesandbox/sandpack-themes";
+import useDarkTheme from "../../../hooks/useDarkTheme";
+
+# HTML Element: `<fieldset>`
+
+The `<fieldset>` element is used to **group** related **form** elements within a web form.
+
+## Syntax
+
+Here's the basic syntax of the `<fieldset>` element:
+
+```html showLineNumbers /fieldset/
+<form>
+  <fieldset>
+    <!-- form elements -->
+  </fieldset>
+</form>
+```
+
+The `<fieldset>` element contains other form-related elements, typically `<legend>` for a **title**, and **form controls** like `<input>`, `<textarea>`, and `<select>`.
+
+## Attributes
+
+### `disabled`
+
+The `disabled` attribute is used to disable all the form controls within the `<fieldset>` element.
+
+```html showLineNumbers /disabled/
+<form>
+  <fieldset disabled>
+    <!-- form elements -->
+  </fieldset>
+</form>
+```
+
+### `form`
+
+Specifies which `<form>` element the `<fieldset>` belongs to, using the form's `id` attribute.
+
+```html showLineNumbers /form/1,3,6 /id/
+<form id="form">
+  <fieldset form="form">
+    <!-- form elements -->
+  </fieldset>
+</form>
+```
+
+### `name`
+
+Assigns a name to the `<fieldset>`, which can be useful for scripting.
+
+```html showLineNumbers /name/
+<form>
+  <fieldset name="fieldset">
+    <!-- form elements -->
+  </fieldset>
+</form>
+```
+
+## Example
+
+### Basic Example
+
+```html showLineNumbers
+<form>
+  <fieldset>
+    <legend>Contact Information</legend>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" /><br /><br />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" /><br /><br />
+  </fieldset>
+  <fieldset>
+    <legend>Shipping Address</legend>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" /><br /><br />
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" /><br /><br />
+  </fieldset>
+</form>
+```
+
+**Output:**
+
+export const FieldSetExample = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    const fieldsetStyle = {
+        backgroundColor: 'CornflowerBlue',
+        padding: '1rem',
+        maxWidth: '400px',
+        borderRadius: '0.5rem',
+    };
+
+    const legendStyle = {
+        color: 'white',
+        marginBottom: '1rem', // Add some spacing below the legend
+        fontSize: '1.5rem', // Increase the font size for emphasis
+        fontWeight: 'bold', // Make the legend text bold
+    };
+
+    const labelStyle = {
+        fontWeight: 'bold', // Make labels bold
+        marginBottom: '0.5rem', // Add spacing below labels
+    };
+
+    const inputStyle = {
+        padding: '0.5rem',
+        marginBottom: '1rem', // Add spacing below inputs
+        borderRadius: '0.3rem', // Add some border radius to inputs
+        border: '1px solid #ccc', // Add a subtle border to inputs
+    };
+
+    return (
+        <form style={fieldsetStyle}>
+            <fieldset>
+                <legend style={legendStyle}>Contact Information</legend>
+                <label htmlFor="name" style={labelStyle}>Name:</label>
+                <input type="text" id="name" name="name" style={inputStyle} />
+                <br />
+                <label htmlFor="email" style={labelStyle}>Email:</label>
+                <input type="email" id="email" name="email" style={inputStyle} />
+            </fieldset>
+            <fieldset>
+                <legend style={legendStyle}>Shipping Address</legend>
+                <label htmlFor="address" style={labelStyle}>Address:</label>
+                <input type="text" id="address" name="address" style={inputStyle} />
+                <br />
+                <label htmlFor="city" style={labelStyle}>City:</label>
+                <input type="text" id="city" name="city" style={inputStyle} />
+            </fieldset>
+        </form>
+    );
+
+};
+
+<FieldSetExample />
+
+export const CallOut = () => (
+  <Callout type="warning">
+    <p>
+      The <code>fieldset</code> element is not supported in Internet Explorer 9
+      and earlier versions.
+    </p>
+  </Callout>
+);
+
+<CallOut />
+
+## Best Practices
+
+- Always include a `<legend>` element to provide a meaningful description for the `<fieldset>`.
+- Use `<label>` elements with their for attribute pointing to the respective form controls for better accessibility.
+- Avoid nesting `<fieldset>` elements as it can "lead to confusion in screen readers.
+
+## Advanced Features
+
+### Styling `<fieldset>` Elements
+
+You can apply [**CSS**](/css) to style `<fieldset>` elements, including borders, padding, and background colors.
+
+```css showLineNumbers
+fieldset {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background-color: #f5f5f5;
+}
+```
+
+### Styling `<legend>` Elements
+
+You can apply [**CSS**](/css) to style `<legend>` elements, including font size, font weight, and text color.
+
+```css showLineNumbers
+legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+```
+
+### Styling `<label>` Elements
+
+You can apply [**CSS**](/css) to style `<label>` elements, including font weight, margin, and text color.
+
+```css showLineNumbers
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+```
+
+### Styling `<input>` Elements
+
+You can apply [**CSS**](/css) to style `<input>` elements, including padding, margin, border radius, and border.
+
+```css showLineNumbers
+input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+}
+```
+
+### JavaScript Events
+
+You can use JavaScript to dynamically enable or disable `<fieldset>` elements based on user actions.
+
+```js showLineNumbers
+const fieldset = document.querySelector("fieldset");
+const checkbox = document.querySelector("input[type=checkbox]");
+checkbox.addEventListener("change", () => {
+  fieldset.disabled = !fieldset.disabled;
+});
+```
+
+**Output:**
+
+export const JavaScriptFieldSet = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    const [isDisabled, setIsDisabled] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    const handleCheckboxChange = () => {
+    setIsDisabled(!isDisabled);
+    };
+
+    return (
+    <div>
+      <fieldset style={{ opacity: isDisabled ? 0.5 : 1 }}>
+        <legend>Fieldset</legend>
+        <label>
+          <input type="checkbox" onChange={handleCheckboxChange} style={{ marginRight: '0.5rem' }} />
+          Disable Fieldset
+        </label>
+        <p>This is some content inside the fieldset.</p>
+      </fieldset>
+    </div>
+
+);
+}
+
+<JavaScriptFieldSet />
+
+### Validation
+
+Combine with HTML5 form validation attributes like required or custom validation logic to validate form controls within a `<fieldset>`.
+
+```html showLineNumbers
+<fieldset>
+  <legend>Payment Options</legend>
+  <input type="radio" id="credit" name="payment" value="credit" required />
+  <label for="credit">Credit Card</label>
+  <input type="radio" id="paypal" name="payment" value="paypal" />
+  <label for="paypal">PayPal</label>
+</fieldset>
+```
+
+**Output:**
+
+export const ValidationFieldSet = () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+    const fieldsetStyle = {
+        backgroundColor: 'CornflowerBlue',
+        padding: '1rem',
+        maxWidth: '400px',
+        borderRadius: '0.5rem',
+    };
+
+    const legendStyle = {
+        color: 'white',
+        marginBottom: '1rem', // Add some spacing below the legend
+        fontSize: '1.5rem', // Increase the font size for emphasis
+        fontWeight: 'bold', // Make the legend text bold
+    };
+
+    const labelStyle = {
+        fontWeight: 'bold', // Make labels bold
+        marginBottom: '0.5rem', // Add spacing below labels
+    };
+
+    const inputStyle = {
+        padding: '0.5rem',
+        marginBottom: '1rem', // Add spacing below inputs
+        borderRadius: '0.3rem', // Add some border radius to inputs
+        border: '1px solid #ccc', // Add a subtle border to inputs
+    };
+
+    return (
+        <form style={fieldsetStyle}>
+            <fieldset>
+                <legend style={legendStyle}>Payment Options</legend>
+                <label htmlFor="credit" style={labelStyle}>
+                    <input type="radio" id="credit" name="payment" value="credit" required style={{ marginRight: '0.5rem' }} />
+                    Credit Card
+                </label>
+                <label htmlFor="paypal" style={labelStyle}>
+                    <input type="radio" id="paypal" name="payment" value="paypal" style={{ margin: '0.5rem' }} />
+                    PayPal
+                </label>
+            </fieldset>
+        </form>
+    );
+
+};
+
+<ValidationFieldSet />
+
+## Conclusion
+
+In summary, the `<fieldset>` element is a fundamental tool for organizing and structuring forms in HTML. It groups related form controls, improves accessibility, and can be customized and enhanced with [**CSS**](/css) and [**JavaScript**](/javascript) to create interactive and visually appealing forms.
+
+## Playground
+
+<Sandpack
+  template="static"
+  theme={useDarkTheme() ? atomDark : undefined}
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fieldset-group {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .fieldset-group legend {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form>
+            <fieldset class="fieldset-group">
+                <legend>Personal Information</legend>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+
+            <fieldset class="fieldset-group">
+                <legend>Account Information</legend>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </fieldset>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>`,
+  }}
+/>

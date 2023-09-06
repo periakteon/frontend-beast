@@ -20,5 +20,6 @@
   "details": "<details>",
   "div": "<div>",
   "em": "<em>",
-  "embed": "<embed>"
+  "embed": "<embed>",
+  "fieldset": "<fieldset>"
 }
